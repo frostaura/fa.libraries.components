@@ -1,0 +1,79 @@
+﻿html,
+body {
+    /*
+     * See https://codepen.io/sosuke/pen/Pjoqqp for more filter calculations.
+     */
+    --fa-svg-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(328deg) brightness(103%) contrast(103%);
+    --fa-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --fa-font-size: 1rem;
+    --fa-font-size-small: 0.7rem;
+    --fa-font-size-big: 2rem;
+    --fa-font-header-size: 1.1rem;
+    --fa-icon-size: 128px;
+    --fa-padding-primary: 15px;
+    --fa-loader-height: 3px;
+    --fa-background-primary: rgb(235,235,235);
+    --fa-background-secondary: black;
+    --fa-background-3: white;
+    --fa-color-primary: var(--fa-background-secondary);
+    --fa-color-secondary: var(--fa-background-primary);
+    --fa-color-positive: lime;
+    --fa-color-negative: crimson;
+    --fa-color-warning: orange;
+    --fa-animation-transision-primary: 0.25s;
+    --fa-nav-item-size: 1.5rem;
+    --fa-nav-bar-width: 250px;
+    --fa-nav-background-color: var(--fa-background-secondary);
+    --fa-nav-color: var(--fa-background-primary);
+    --fa-shadow-radius: 10px;
+    --fa-shadow-primary: 0 0 var(--fa-shadow-radius) rgb(0,0,0,0.7);
+    margin: 0;
+    padding: 0;
+    font-family: var(--fa-font-family);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow: hidden;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--fa-padding-primary);
+}
+
+/* Desktop-specific styling. */
+@media (min-width: 768px) {
+    body * {
+        --fa-shadow-radius: 5px;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+/* Mobile-specific styling. */
+@media (max-width: 768px) {
+    body * {
+        --fa-padding-primary: 10px;
+    }
+
+    .no-mobile {
+        display: none !important;
+    }
+
+    h1 {
+        display: none;
+    }
+}

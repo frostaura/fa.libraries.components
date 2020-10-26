@@ -1,0 +1,11 @@
+﻿@inherits BaseComponent<TogglableCard>
+
+<InjectEmbeddedContent ContentName="TogglableCard.razor.css" HtmlWrapper="style" />
+<togglable-card>
+    @HeaderContent(this)
+
+    @if (Expanded) 
+    {
+        @BodyContent
+    }
+</togglable-card>

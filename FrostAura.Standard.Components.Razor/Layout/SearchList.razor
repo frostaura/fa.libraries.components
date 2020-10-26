@@ -1,0 +1,18 @@
+﻿@typeparam TItemType
+@inherits BaseComponent<SearchList<TItemType>>
+
+<InjectEmbeddedContent ContentName="SearchList.razor.css" HtmlWrapper="style" />
+<fa-search-list>
+    <div class="search-bar">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="@Placeholder" value="@_searchPhrase" @oninput="OnSearchPhraseChanged" />
+        <i class="fa fa-close" title="Clear the search phrase." @onclick="OnSearchPhraseClearTapped"></i>
+    </div>
+    @SearchFooterTemplate
+    <div>
+        @foreach (var item in _items)
+        {
+            @ItemTemplate(item)
+        }
+    </div>
+</fa-search-list>

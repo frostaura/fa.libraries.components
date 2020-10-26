@@ -1,0 +1,7 @@
+﻿fa-navigation-view {
+    flex: 1;
+    background-color: var(--fa-background-primary);
+    color: var(--fa-color-primary);
+    padding: var(--fa-padding-primary);
+    overflow: auto;
+}
