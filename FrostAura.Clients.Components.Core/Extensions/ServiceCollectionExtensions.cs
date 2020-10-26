@@ -43,15 +43,16 @@ namespace FrostAura.Clients.Components.Core.Extensions
                         Path = "/",
                         MatchType = Microsoft.AspNetCore.Components.Routing.NavLinkMatch.All
                     });
-                    c.NavigationItems.Add(new NavLink
+                    c.AddComponentCatelogNavItems();
+                    /*c.NavigationItems.Add(new NavLink
                     {
                         IconCssClass = "fa fa-sign-in",
                         Title = "Sign In",
                         Path = $"identity/login?redirectUri={Uri.EscapeUriString("/secure")}"
-                    });
+                    });*/
 
                     // Authenticated nav items.
-                    c.NavigationItems.Add(new NavLink
+                    /*c.NavigationItems.Add(new NavLink
                     {
                         IconCssClass = "fa fa-home",
                         Title = "Secure Home",
@@ -65,7 +66,7 @@ namespace FrostAura.Clients.Components.Core.Extensions
                         Title = "Sign Out",
                         Path = $"identity/logout?redirectUri={Uri.EscapeUriString("/")}",
                         RequireAuthentication = true,
-                    });
+                    });*/
                 }, configuration);
         }
     }

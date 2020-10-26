@@ -8,7 +8,7 @@ namespace FrostAura.Standard.Components.Razor.Layout
     /// <summary>
     /// Component to visualize the navigation menu.
     /// </summary>
-    public partial class NavigationSidebar : BaseAuthenticatedComponent<NavigationSidebar>
+    public partial class NavigationSidebar : BaseComponent<NavigationSidebar>
     {
         /// <summary>
         /// Runtime to allow for JS execution.

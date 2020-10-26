@@ -102,8 +102,8 @@ namespace FrostAura.Standard.Components.Razor.Navigation
                 id = Id,
                 center = new
                 {
-                    lat = Center.Latitude,
-                    lng = Center.Longitude
+                    lat = Center?.Latitude,
+                    lng = Center?.Longitude
                 },
                 zoom = Zoom,
                 mapType = MapType.ToString().ToLower(),
