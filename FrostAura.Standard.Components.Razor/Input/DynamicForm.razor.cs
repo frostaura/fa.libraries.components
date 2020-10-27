@@ -10,6 +10,7 @@ namespace FrostAura.Standard.Components.Razor.Input
     /// <summary>
     /// Component for generating an input form automatically based on a given type and instance of the type.
     /// </summary>
+    /// <typeparam name="TDataContextType">Data context model type.</typeparam>
     public partial class DynamicForm<TDataContextType> : BaseComponent<DynamicForm<TDataContextType>> where TDataContextType : new()
     {
         /// <summary>
@@ -48,6 +49,7 @@ namespace FrostAura.Standard.Components.Razor.Input
             if (!OnValidSubmit.HasDelegate) return;
 
             OnValidSubmit.InvokeAsync(context);
+            StateHasChanged();
         }
     }
 }

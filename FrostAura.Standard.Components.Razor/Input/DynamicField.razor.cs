@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Components.CompilerServices;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -93,7 +92,7 @@ namespace FrostAura.Standard.Components.Razor.Input
             builder.AddAttribute(1, "id", PropertyInformation.Name);
             builder.AddAttribute(2, nameof(InputBase<TValue>.Value), currentValue);
             builder.AddAttribute(3, nameof(InputBase<TValue>.ValueExpression), castedLambda);
-            builder.AddAttribute(4, nameof(InputText.ValueChanged), RuntimeHelpers.TypeCheck(
+            builder.AddAttribute(4, nameof(InputBase<TValue>.ValueChanged), RuntimeHelpers.TypeCheck(
                 EventCallback.Factory.Create(
                     this, 
                     EventCallback.Factory.CreateInferred(this, val => PropertyInformation.SetValue(CascadedEditContext.Model, val), 
