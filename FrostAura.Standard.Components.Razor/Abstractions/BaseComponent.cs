@@ -14,7 +14,13 @@ namespace FrostAura.Standard.Components.Razor.Abstractions
         /// <summary>
         /// Unique component instance identifier.
         /// </summary>
+        [Parameter]
         public string Id { get; set; } = Guid.NewGuid().ToString();
+        /// <summary>
+        /// Whether to enable demo defaults for this component.
+        /// </summary>
+        [Parameter]
+        public bool EnableDemoMode { get; set; }
         /// <summary>
         /// Application configuration.
         /// </summary>

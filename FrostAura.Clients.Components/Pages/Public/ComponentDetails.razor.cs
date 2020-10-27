@@ -35,9 +35,15 @@ namespace FrostAura.Clients.Components.Pages.Public
 
             if (componentType == default) return;
 
+            if (componentType.IsGenericType)
+            {
+                componentType = componentType.MakeGenericType(typeof(object));
+            }
+
             ComponentFragment = builder =>
             {
                 builder.OpenComponent(0, componentType);
+                builder.AddAttribute(1, "EnableDemoMode", true);
                 builder.CloseComponent();
             };
         }

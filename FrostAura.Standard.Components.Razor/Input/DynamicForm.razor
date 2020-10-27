@@ -1,3 +1,26 @@
-﻿@inherits BaseComponent<DynamicForm>
+﻿@typeparam TDataContextType
+@inherits BaseComponent<DynamicForm<TDataContextType>>
+@using Newtonsoft.Json;
 
-<h3>DynamicForm</h3>
+<EditForm Model="@DataContext" OnValidSubmit="@(context => OnValidSubmit.InvokeAsync(context))">
+    <DataAnnotationsValidator />
+
+    @if (ShowValidationSummary)
+    {
+        <ValidationSummary />
+    }
+
+    @foreach (var prop in DataContext
+      .GetType()
+      .GetProperties())
+    {
+        <DynamicField EnableDemoMode="EnableDemoMode" PopertyInformation="prop" />
+    }
+
+    <button type="submit">@SubmitButtonText</button>
+</EditForm>
+
+@if (EnableDemoMode)
+{
+    <pre>@JsonConvert.SerializeObject(DataContext, Formatting.Indented)</pre>
+}
