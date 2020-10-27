@@ -1,5 +1,6 @@
 ﻿using FrostAura.Standard.Components.Razor.Abstractions;
 using FrostAura.Standard.Components.Razor.Models.Demo;
+using FrostAura.Standard.Components.Razor.Enums.DynamicForm;
 
 namespace FrostAura.Standard.Components.Razor.Input
 {
@@ -14,7 +15,7 @@ namespace FrostAura.Standard.Components.Razor.Input
 
             if (!EnableDemoMode) return;
 
-            ShowValidationSummary = true;
+            ValidationSummaryPosition = ValidationSummaryPosition.FormBottom;
             DataContext = (TDataContextType)(object)new DynamicFormDemoInputModel();
         }
     }

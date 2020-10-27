@@ -1,5 +1,8 @@
 ﻿using FrostAura.Standard.Components.Razor.Abstractions;
+using FrostAura.Standard.Components.Razor.Enums.DynamicForm;
 using Microsoft.AspNetCore.Components;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace FrostAura.Standard.Components.Razor.Input
 {
@@ -24,9 +27,15 @@ namespace FrostAura.Standard.Components.Razor.Input
         [Parameter]
         public string SubmitButtonText { get; set; } = "Submit";
         /// <summary>
-        /// Whether to show a full validation summary,
+        /// Where to show a full validation summary,
         /// </summary>
         [Parameter]
-        public bool ShowValidationSummary { get; set; }
+        public ValidationSummaryPosition ValidationSummaryPosition { get; set; }
+        /// <summary>
+        /// Get data context property information.
+        /// </summary>
+        private IEnumerable<PropertyInfo> _dataContextProperties => DataContext?
+            .GetType()
+            .GetProperties();
     }
 }

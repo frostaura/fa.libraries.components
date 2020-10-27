@@ -2,25 +2,37 @@
 @inherits BaseComponent<DynamicForm<TDataContextType>>
 @using Newtonsoft.Json;
 
-<EditForm Model="@DataContext" OnValidSubmit="@(context => OnValidSubmit.InvokeAsync(context))">
-    <DataAnnotationsValidator />
+<InjectEmbeddedContent ContentName="DynamicForm.razor.css" HtmlWrapper="style" />
+<fa-dynamic-form>
+    <EditForm Model="@DataContext" OnValidSubmit="@(context => OnValidSubmit.InvokeAsync(context))">
+        <DataAnnotationsValidator />
 
-    @if (ShowValidationSummary)
+        @if (ValidationSummaryPosition == Enums.DynamicForm.ValidationSummaryPosition.FormTop)
+        {
+            <ValidationSummary />
+        }
+
+        @foreach (var prop in _dataContextProperties)
+        {
+            <DynamicField EnableDemoMode="EnableDemoMode" PopertyInformation="prop" />
+        }
+
+        @if (ValidationSummaryPosition == Enums.DynamicForm.ValidationSummaryPosition.AboveSubmit)
+        {
+            <ValidationSummary />
+        }
+
+        <button type="submit">@SubmitButtonText</button>
+
+        @if (ValidationSummaryPosition == Enums.DynamicForm.ValidationSummaryPosition.FormBottom)
+        {
+            <ValidationSummary />
+        }
+    </EditForm>
+
+    @if (EnableDemoMode)
     {
-        <ValidationSummary />
+        <div>Data Context Preview</div>
+        <pre>@JsonConvert.SerializeObject(DataContext, Formatting.Indented)</pre>
     }
-
-    @foreach (var prop in DataContext
-      .GetType()
-      .GetProperties())
-    {
-        <DynamicField EnableDemoMode="EnableDemoMode" PopertyInformation="prop" />
-    }
-
-    <button type="submit">@SubmitButtonText</button>
-</EditForm>
-
-@if (EnableDemoMode)
-{
-    <pre>@JsonConvert.SerializeObject(DataContext, Formatting.Indented)</pre>
-}
+</fa-dynamic-form>
