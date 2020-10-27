@@ -4,7 +4,7 @@
 
 <InjectEmbeddedContent ContentName="DynamicForm.razor.css" HtmlWrapper="style" />
 <fa-dynamic-form>
-    <EditForm Model="@DataContext" OnValidSubmit="@(context => OnValidSubmit.InvokeAsync(context))">
+    <EditForm Model="@DataContext" OnValidSubmit="@HandleOnValidSubmit">
         <DataAnnotationsValidator />
 
         @if (ValidationSummaryPosition == Enums.DynamicForm.ValidationSummaryPosition.FormTop)
@@ -14,7 +14,7 @@
 
         @foreach (var prop in _dataContextProperties)
         {
-            <DynamicField EnableDemoMode="EnableDemoMode" PopertyInformation="prop" />
+            <DynamicField EnableDemoMode="EnableDemoMode" PropertyInformation="prop" />
         }
 
         @if (ValidationSummaryPosition == Enums.DynamicForm.ValidationSummaryPosition.AboveSubmit)

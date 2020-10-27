@@ -9,6 +9,7 @@
     <None Remove="Content\CountdownBar.razor.css" />
     <None Remove="Content\fa.core.css" />
     <None Remove="FrostAuraApplication.razor.css" />
+    <None Remove="Input\DynamicField.razor.css" />
     <None Remove="Input\DynamicForm.razor.css" />
     <None Remove="Layout\MainLayout.razor.css" />
     <None Remove="Layout\NavigationLayout.razor.css" />
@@ -25,6 +26,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Content\CountdownBar.razor.css" />
     <EmbeddedResource Include="FrostAuraApplication.razor.css" />
+    <EmbeddedResource Include="Input\DynamicField.razor.css" />
     <EmbeddedResource Include="Input\DynamicForm.razor.css" />
     <EmbeddedResource Include="Layout\NavigationLayout.razor.css" />
     <EmbeddedResource Include="Layout\NavigationLayout.razor.js" />

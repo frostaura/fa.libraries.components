@@ -1,6 +1,7 @@
 ﻿using FrostAura.Standard.Components.Razor.Abstractions;
 using FrostAura.Standard.Components.Razor.Enums.DynamicForm;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -37,5 +38,16 @@ namespace FrostAura.Standard.Components.Razor.Input
         private IEnumerable<PropertyInfo> _dataContextProperties => DataContext?
             .GetType()
             .GetProperties();
+
+        /// <summary>
+        /// Handler for when the form has been successfully submitted.
+        /// </summary>
+        /// <param name="context">Edit context.</param>
+        public void HandleOnValidSubmit(EditContext context)
+        {
+            if (!OnValidSubmit.HasDelegate) return;
+
+            OnValidSubmit.InvokeAsync(context);
+        }
     }
 }
