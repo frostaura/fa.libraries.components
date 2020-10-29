@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{858EC63A-5BBB-41FC-B68A-8182B4298D6D}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		..\fa.standard.libraries\.travis.yml = ..\fa.standard.libraries\.travis.yml
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
 		README.md = README.md
@@ -22,6 +23,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Clients.Components.Data", "FrostAura.Clients.Components.Data\FrostAura.Clients.Components.Data.csproj", "{EBE0B4E2-48C9-49F2-AC37-03C281F19A5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Clients.Components.Shared", "FrostAura.Clients.Components.Shared\FrostAura.Clients.Components.Shared.csproj", "{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Standard.Components.Razor.Tests", "FrostAura.Standard.Components.Razor.Tests\FrostAura.Standard.Components.Razor.Tests.csproj", "{9B9359F8-AB25-4359-ACFD-382EE52DA054}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +52,10 @@ Global
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAA1DE8B-C85C-498A-A33F-2AD3F1293A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9359F8-AB25-4359-ACFD-382EE52DA054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9359F8-AB25-4359-ACFD-382EE52DA054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9359F8-AB25-4359-ACFD-382EE52DA054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9359F8-AB25-4359-ACFD-382EE52DA054}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

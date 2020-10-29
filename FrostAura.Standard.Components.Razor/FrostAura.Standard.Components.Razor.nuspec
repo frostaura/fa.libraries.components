@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>FrostAura.Standard.Components.Razor</id>
+        <version>0.1.1</version>
+        <title>FrostAura.Standard.Components.Razor</title>
+        <authors>Dean Martin</authors>
+        <owners>FrostAura</owners>
+        <projectUrl>https://github.com/faGH/fa.standard.components</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>FrostAura component suite for Blazor applications.</description>
+        <summary />
+    </metadata>
+    <files>
+        <file src="bin\Debug\netcoreapp3.1\FrostAura.Standard.Components.Razor.dll" target="lib\netcoreapp3.1\FrostAura.Standard.Components.Razor.dll" />
+        <file src="bin\Debug\netcoreapp3.1\FrostAura.Standard.Components.Razor.pdb" target="lib\netcoreapp3.1\FrostAura.Standard.Components.Razor.pdb" />
+    </files>
+</package>
