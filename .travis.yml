@@ -1,0 +1,16 @@
+language: csharp
+sudo: required
+mono: none
+dotnet: 3.1
+dist: xenial
+script:
+  - dotnet restore
+  - dotnet build
+  - dotnet test ./FrostAura.Standard.Components.Razor.Tests/
+  - dotnet pack ./FrostAura.Standard.Components.Razor/FrostAura.Standard.Components.Razor.csproj /p:NuspecFile=./FrostAura.Standard.Components.Razor.nuspec --version-suffix "$TRAVIS_BUILD_NUMBER" -o "$TRAVIS_BUILD_DIR" -c Release --include-symbols -p:SymbolPackageFormat=snupkg
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: cd $TRAVIS_BUILD_DIR & ls & dotnet nuget push "$TRAVIS_BUILD_DIR/*.nupkg" -k $NUGET_API_KEY -s $NUGET_SOURCE
+  on:
+    branch: master
