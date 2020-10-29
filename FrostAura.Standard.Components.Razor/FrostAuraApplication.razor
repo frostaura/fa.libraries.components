@@ -1,5 +1,6 @@
 ﻿@typeparam TProgramType
-@inject NavigationManager NavigationManager
+@inherits BaseComponent<FrostAuraApplication<TProgramType>>
+
 <!-- Bootstrap the core ForstAura application. All non-visual elements. -->
 <InjectEmbeddedContent ContentName="FrostAuraApplication.razor.css" HtmlWrapper="style" />
 <CascadingAuthenticationState>

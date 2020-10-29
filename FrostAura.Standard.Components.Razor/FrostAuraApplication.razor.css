@@ -52,6 +52,10 @@ h1 {
     margin-bottom: var(--fa-padding-primary);
 }
 
+#components-reconnect-modal {
+    display: none !important;
+}
+
 /* Desktop-specific styling. */
 @media (min-width: 768px) {
     body * {
