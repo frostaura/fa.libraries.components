@@ -3,7 +3,6 @@ using FrostAura.Standard.Components.Razor.Abstractions;
 using FrostAura.Standard.Components.Razor.Enums.GoogleMap;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System;
 using System.Threading.Tasks;
 
 namespace FrostAura.Standard.Components.Razor.Navigation
@@ -13,10 +12,6 @@ namespace FrostAura.Standard.Components.Razor.Navigation
     /// </summary>
     public partial class GoogleMap : BaseComponent<GoogleMap>
     {
-        /// <summary>
-        /// Unique container identifier.
-        /// </summary>
-        public string Id { get; set; } = Guid.NewGuid().ToString();
         /// <summary>
         /// Center point for the map.
         /// </summary>
