@@ -5,7 +5,7 @@ FrostAura client framework for Blazor server. This includes a components catelog
 ## Status
 | Project | Build | Test Coverage
 | --- | --- | --- |
-| FrostAura.Clients.Components | ![TravisCI](https://travis-ci.org/faGH/fa.clients.components.svg?branch=master) | PENDING |
+| FrostAura.Clients.Components | ![TravisCI](https://travis-ci.org/faGH/fa.standard.components.svg?branch=master) | PENDING |
 ## Database Migrations (EF Core)
 ### Overview
 For migrations, we need to add them initially and update or re-add them each time the context changes. The actual execution of migrations happen on application start and is autonomous.
