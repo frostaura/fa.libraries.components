@@ -1,6 +1,6 @@
-﻿using FrostAura.Libraries.Components.Razor.Models.Geolocation;
-using FrostAura.Standard.Components.Razor.Abstractions;
+﻿using FrostAura.Standard.Components.Razor.Abstractions;
 using FrostAura.Standard.Components.Razor.Enums.GoogleMap;
+using FrostAura.Standard.Components.Razor.Models.Geolocation;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Threading.Tasks;

@@ -1,4 +1,4 @@
-﻿namespace FrostAura.Libraries.Components.Razor.Models.Geolocation
+﻿namespace FrostAura.Standard.Components.Razor.Models.Geolocation
 {
     /// <summary>
     /// Geolocation point.

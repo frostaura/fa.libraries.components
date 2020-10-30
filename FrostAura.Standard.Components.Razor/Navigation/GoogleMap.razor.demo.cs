@@ -1,4 +1,5 @@
 ﻿using FrostAura.Standard.Components.Razor.Abstractions;
+using FrostAura.Standard.Components.Razor.Models.Geolocation;
 
 namespace FrostAura.Standard.Components.Razor.Navigation
 {
@@ -17,7 +18,7 @@ namespace FrostAura.Standard.Components.Razor.Navigation
             if (!EnableDemoMode) return;
 
             ApiKey = Configuration.GoogleMapsApiKey;
-            Center = new Libraries.Components.Razor.Models.Geolocation.GeoPoint
+            Center = new GeoPoint
             {
                 Latitude = "-29.837145",
                 Longitude = "24.521990"
