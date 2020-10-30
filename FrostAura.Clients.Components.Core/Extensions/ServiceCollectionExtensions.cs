@@ -2,7 +2,6 @@
 using FrostAura.Standard.Components.Razor.Models.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace FrostAura.Clients.Components.Core.Extensions
 {
