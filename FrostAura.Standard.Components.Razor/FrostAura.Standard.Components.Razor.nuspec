@@ -6,7 +6,6 @@
     <title>FrostAura.Standard.Components.Razor</title>
     <authors>Dean Martin</authors>
     <owners>FrostAura</owners>
-    <icon>https://avatars1.githubusercontent.com/u/8956241?s=460&v=4</icon>
     <projectUrl>https://github.com/faGH/fa.standard.components</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>FrostAura component suite for Blazor applications.</description>
