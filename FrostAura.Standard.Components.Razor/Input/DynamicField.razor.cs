@@ -1,10 +1,14 @@
 ﻿using FrostAura.Standard.Components.Razor.Abstractions;
+using FrostAura.Standard.Components.Razor.Attributes.Rendering;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.CompilerServices;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
+using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -19,7 +23,7 @@ namespace FrostAura.Standard.Components.Razor.Input
         /// Get the instance. This instance will be used to fill out the values inputted by the user.
         /// </summary>
         [CascadingParameter]
-        EditContext CascadedEditContext { get; set; }
+        public EditContext CascadedEditContext { get; set; }
         /// <summary>
         /// Property information to render an element for.
         /// </summary>
@@ -37,6 +41,20 @@ namespace FrostAura.Standard.Components.Razor.Input
 
                 return descriptionAttribute?.Description ?? PropertyInformation.Name;
             }
+        }
+        /// <summary>
+        /// Collection of types that support being rendered by the dynamic field system together with which component to render for the type.
+        /// </summary>
+        private static readonly Dictionary<Type, Type> _typeToControlRendererMappings = new Dictionary<Type, Type>();
+
+        /// <summary>
+        /// Register a new control to be rendered when a given field type is encountered. The control type has to be derived from InputBase<typeparamref name="TFieldType"/>.
+        /// </summary>
+        /// <typeparam name="TFieldType">Fielt type to map the control for.</typeparam>
+        /// <typeparam name="TControlToRenderType">Control type to render for the field.</typeparam>
+        public static void RegisterRendererTypeControl<TFieldType, TControlToRenderType>() where TControlToRenderType : InputBase<TFieldType>
+        {
+            _typeToControlRendererMappings[typeof(TFieldType)] = typeof(TControlToRenderType);
         }
 
         /// <summary>
@@ -81,11 +99,19 @@ namespace FrostAura.Standard.Components.Razor.Input
         /// <param name="builder">Render tree.</param>
         private void GenerateRenderTreeForInputField<TValue>(RenderTreeBuilder builder)
         {
+            var componentType = GetComponentTypeToRenderForValueType<TValue>();
+
+            if (componentType == default)
+            {
+                GenerateRenderTreeForChildInputFields<TValue>(builder);
+
+                return;
+            }
+
             var constant = Expression.Constant(CascadedEditContext.Model, CascadedEditContext.Model.GetType());
             var exp = Expression.Property(constant, PropertyInformation.Name);
             var lambda = Expression.Lambda(exp);
             var castedLambda = (Expression<Func<TValue>>)lambda;
-            var componentType = GetComponentTypeToRenderForValueType<TValue>();
             var currentValue = (TValue)PropertyInformation.GetValue(CascadedEditContext.Model);
 
             builder.OpenComponent(0, componentType);
@@ -101,18 +127,43 @@ namespace FrostAura.Standard.Components.Razor.Input
         }
 
         /// <summary>
+        /// Generate a randerable section for the given property information's children properties.
+        /// </summary>
+        /// <typeparam name="TValue">Property value type.</typeparam>
+        /// <param name="builder">Render tree.</param>
+        private void GenerateRenderTreeForChildInputFields<TValue>(RenderTreeBuilder builder)
+        {
+            var type = typeof(TValue);
+            var properties = type
+                .GetProperties()
+                .Where(p => p.GetCustomAttribute<FieldIgnoreAttribute>() == default)
+                .ToArray();
+
+            for (int i = 0; i < properties.Length; i++)
+            {
+                var property = properties[i];
+                builder.OpenComponent(0, typeof(DynamicField));
+                builder.AddAttribute(1, nameof(EnableDemoMode), EnableDemoMode);
+                builder.AddAttribute(2, nameof(PropertyInformation), property);
+                builder.CloseComponent();
+            }
+        }
+
+        /// <summary>
         /// Determine which object type to render for a given data type.
         /// </summary>
         /// <typeparam name="TValue">Data type.</typeparam>
         /// <returns>Object type to render.</returns>
         private Type GetComponentTypeToRenderForValueType<TValue>()
         {
-            if (typeof(TValue) == typeof(string)) return typeof(InputText);
-            if (typeof(TValue) == typeof(int)) return typeof(InputNumber<TValue>);
-            if (typeof(TValue) == typeof(DateTime)) return typeof(InputDate<TValue>);
-            if (typeof(TValue) == typeof(bool)) return typeof(InputCheckbox);
+            if (!_typeToControlRendererMappings.ContainsKey(typeof(TValue)))
+            {
+                Logger.LogWarning($"The type '{typeof(TValue).FullName}' is not supported by DynamicField. Call FrostAura.Standard.Components.Razor.Input.DynamicField.RegisterRendererTypeControl in order to map a renderer.");
 
-            throw new NotImplementedException($"The type '{typeof(TValue).FullName}' is not supported by DynamicField.");
+                return default;
+            }
+
+            return _typeToControlRendererMappings[typeof(TValue)];
         }
     }
 }

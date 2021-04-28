@@ -47,6 +47,11 @@
     <PackageReference Include="FrostAura.Libraries.Core" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="3.1.9" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\clients\events\FrostAura.Clients.Events.Shared\FrostAura.Clients.Events.Shared.csproj" />
   </ItemGroup>
 
 

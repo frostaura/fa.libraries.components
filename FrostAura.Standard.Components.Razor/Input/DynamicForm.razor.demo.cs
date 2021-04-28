@@ -4,6 +4,7 @@ using FrostAura.Standard.Components.Razor.Enums.DynamicForm;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using FrostAura.Clients.Events.Shared.Models.Views;
 
 namespace FrostAura.Standard.Components.Razor.Input
 {
@@ -33,7 +34,8 @@ namespace FrostAura.Standard.Components.Razor.Input
             if (!EnableDemoMode) return;
 
             ValidationSummaryPosition = ValidationSummaryPosition.FormBottom;
-            DataContext = (TDataContextType)(object)new DynamicFormDemoInputModel();
+            DataContext = (TDataContextType)(object)new VenueView();
+            //DataContext = (TDataContextType)(object)new DynamicFormDemoInputModel();
             SubmitButtonText = "Show Payload";
         }
     }

@@ -43,7 +43,7 @@ namespace FrostAura.Clients.Components.Pages.Public
             ComponentFragment = builder =>
             {
                 builder.OpenComponent(0, componentType);
-                builder.AddAttribute(1, "EnableDemoMode", true);
+                builder.AddAttribute(1, nameof(BaseComponent<object>.EnableDemoMode), true);
                 builder.CloseComponent();
             };
         }

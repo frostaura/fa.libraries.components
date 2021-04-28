@@ -4,6 +4,7 @@ using FrostAura.Standard.Components.Razor.Models.Configuration;
 using FrostAura.Standard.Components.Razor.Services.Navigation;
 using FrostAura.Standard.Components.Razor.Services.Resources;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -66,6 +67,12 @@ namespace FrostAura.Standard.Components.Razor.Extensions
                         .Scopes
                         .ForEach(s => config.Scope.Add(s));
                 });
+
+            // Register default form control mappings.
+            Input.DynamicField.RegisterRendererTypeControl<string, InputText>(); 
+            Input.DynamicField.RegisterRendererTypeControl<int, InputNumber<int>>();
+            Input.DynamicField.RegisterRendererTypeControl<DateTime, InputDate<DateTime>>();
+            Input.DynamicField.RegisterRendererTypeControl<bool, InputCheckbox>();
 
             return services
                 .AddScoped<IContentService, EmbeddedContentService>()
