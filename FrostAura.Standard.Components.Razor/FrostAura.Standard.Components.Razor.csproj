@@ -51,8 +51,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\clients\events\FrostAura.Clients.Events.Shared\FrostAura.Clients.Events.Shared.csproj" />
+    <ProjectReference Include="..\FrostAura.Clients.Components.Shared\FrostAura.Clients.Components.Shared.csproj" />
   </ItemGroup>
-
-
 </Project>

@@ -1,5 +1,5 @@
-﻿using FrostAura.Standard.Components.Razor.Abstractions;
-using FrostAura.Standard.Components.Razor.Attributes.Rendering;
+﻿using FrostAura.Clients.Components.Shared.Attributes.Rendering;
+using FrostAura.Standard.Components.Razor.Abstractions;
 using FrostAura.Standard.Components.Razor.Enums.DynamicForm;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;

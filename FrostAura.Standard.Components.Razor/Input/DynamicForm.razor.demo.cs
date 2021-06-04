@@ -1,10 +1,8 @@
 ﻿using FrostAura.Standard.Components.Razor.Abstractions;
-using FrostAura.Standard.Components.Razor.Models.Demo;
 using FrostAura.Standard.Components.Razor.Enums.DynamicForm;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
-using FrostAura.Clients.Events.Shared.Models.Views;
 
 namespace FrostAura.Standard.Components.Razor.Input
 {
@@ -34,7 +32,7 @@ namespace FrostAura.Standard.Components.Razor.Input
             if (!EnableDemoMode) return;
 
             ValidationSummaryPosition = ValidationSummaryPosition.FormBottom;
-            DataContext = (TDataContextType)(object)new VenueView();
+            DataContext = (TDataContextType)(object)new object(); // TODO: Figure out what has to go here. I think its the model we want to render for.
             //DataContext = (TDataContextType)(object)new DynamicFormDemoInputModel();
             SubmitButtonText = "Show Payload";
         }

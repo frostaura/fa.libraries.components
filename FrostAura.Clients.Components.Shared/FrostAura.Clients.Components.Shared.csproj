@@ -8,4 +8,12 @@
     <PackageReference Include="FrostAura.Libraries.Core" Version="1.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Attributes\" />
+    <None Remove="Attributes\Rendering\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+    <Folder Include="Attributes\Rendering\" />
+  </ItemGroup>
 </Project>
