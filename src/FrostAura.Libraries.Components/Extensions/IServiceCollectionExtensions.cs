@@ -30,6 +30,10 @@ namespace FrostAura.Libraries.Components.Extensions
             builder(configuration);
 
             return services
+                .AddSingleton<FrostAuraApplicationConfiguration>(sp =>
+                {
+                    return new FrostAuraApplicationConfiguration();
+                })
                 .AddScoped<IContentService, EmbeddedContentService>()
                 .AddScoped<INavigationService, PageNavigationService>()
                 .AddSingleton(configuration);
