@@ -1,0 +1,28 @@
+name: NuGet Workflow
+on:
+  push:
+    branches:
+    - main
+    - master
+env:
+  DOTNET_VERSION: '7.0.x'
+  OUT_DIR: 'release'
+jobs:
+  build-nuget-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core SDK ${{ env.DOTNET_VERSION }}
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    - name: Install Dependencies
+      run: dotnet restore src/
+    - name: Build
+      run: dotnet build src/ --configuration Release --no-restore
+    - name: Test
+      run: dotnet test src/ --no-restore --verbosity normal
+    - name: Pack Core
+      run: dotnet pack src/FrostAura.Libraries.Components/FrostAura.Libraries.Components.csproj /p:NuspecFile=./FrostAura.Libraries.Components.nuspec --version-suffix "${{ github.run_id }}" -o "$OUT_DIR" -c Release --include-symbols -p:SymbolPackageFormat=snupkg
+    - name: Publish NuGet Packages
+      run: dotnet nuget push "$OUT_DIR/*.nupkg" -k "${{ secrets.NUGET_API_KEY }}" -s "https://api.nuget.org/v3/index.json" --skip-duplicate
