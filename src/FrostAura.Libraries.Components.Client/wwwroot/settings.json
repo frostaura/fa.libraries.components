@@ -1,0 +1,5 @@
+﻿{
+  "IdentityServerUrl": "https://id.frostaura.net",
+  "AppIdentity": "fa.libraries.components.client",
+  "AppName": "FrostAura Components Library"
+}

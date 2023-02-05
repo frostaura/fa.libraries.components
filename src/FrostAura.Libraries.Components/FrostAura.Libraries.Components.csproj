@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.2" />
+    <PackageReference Include="FrostAura.Libraries.Core" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.AspNetCore.Components" />
+    <None Remove="FrostAura.Libraries.Core" />
+    <None Remove="Interfaces\Resources\" />
+    <None Remove="Content\CountdownBar.razor.css" />
+    <None Remove="Extensions\" />
+    <None Remove="Services\" />
+    <None Remove="Services\Resources\" />
+    <None Remove="Services\Navigation\" />
+    <None Remove="Root\" />
+    <None Remove="Root\Status\" />
+    <None Remove="Root\Status\CountdownBar.razor.css" />
+    <None Remove="Root\Navigation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Resources\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Resources\" />
+    <Folder Include="Services\Navigation\" />
+    <Folder Include="Root\" />
+    <Folder Include="Root\Status\" />
+    <Folder Include="Root\Navigation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Root\Status\CountdownBar.razor.css" />
+  </ItemGroup>
+</Project>
