@@ -20,7 +20,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Debug\net7.0\FrostAura.Libraries.Components.dll" target="lib\net7.0\FrostAura.Libraries.Components.dll" />
-    <file src="bin\Debug\net7.0\FrostAura.Libraries.Components.pdb" target="lib\net7.0\FrostAura.Libraries.Components.pdb" />
+    <file src="bin\Release\net7.0\FrostAura.Libraries.Components.dll" target="lib\net7.0\FrostAura.Libraries.Components.dll" />
+    <file src="bin\Release\net7.0\FrostAura.Libraries.Components.pdb" target="lib\net7.0\FrostAura.Libraries.Components.pdb" />
   </files>
 </package>
