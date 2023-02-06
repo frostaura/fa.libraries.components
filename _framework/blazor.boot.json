@@ -7,12 +7,12 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "FrostAura.Libraries.Components.Client.dll": "sha256-8Aie2f+CYDuPjFa\/tWsw7+BauLPPiVxtS2nD669V7R8=",
-      "FrostAura.Libraries.Components.Data.dll": "sha256-MYUPIPjkpqYyya74I4tZrTi9kiOlIY2l\/FCJ2f0r3\/Y=",
-      "FrostAura.Libraries.Components.dll": "sha256-eLrPtTicqv6q79sE8HmFmo6OnrbqCh+wpIclHqnP\/iA=",
-      "FrostAura.Libraries.Components.Engines.dll": "sha256-Qwfc+ISLszYfeJroFXM20bnJ4NPrMMtrp3a+uLCMoio=",
-      "FrostAura.Libraries.Components.Managers.dll": "sha256-GBLN2LzdXJs1K6RmY9D4ZtC+1noAgVlLuSS+w+APCfY=",
-      "FrostAura.Libraries.Components.Shared.dll": "sha256-DxvgsZJlb2EfYGyc4TTgvQhDtQlhyMRhocwIaZZb+7A=",
+      "FrostAura.Libraries.Components.Client.dll": "sha256-rfHmRtMFKO3mtC1cCDUT01gsCyizaaDcn8MiiqGcYvc=",
+      "FrostAura.Libraries.Components.Data.dll": "sha256-XeADofaHbxp4VlzBsLITCFAA66\/YEVV\/6S42zFCfM9c=",
+      "FrostAura.Libraries.Components.dll": "sha256-h9jlDWKvk2jHdgotOdnTo5niHWOAhO8SLX9WwRXeL+0=",
+      "FrostAura.Libraries.Components.Engines.dll": "sha256-k+x6I6qmAmdyU4c4PVYvr4Oxe8zEWLPM9NpQieqAT1I=",
+      "FrostAura.Libraries.Components.Managers.dll": "sha256-yzUDhw6fe251CvukIqxx6qvKsFnuIXecXP4izQRJu88=",
+      "FrostAura.Libraries.Components.Shared.dll": "sha256-7gQVIDOJNbCVRf1SyPSjp9LNxGFuS7wQGqgkM8M+QWc=",
       "FrostAura.Libraries.Core.dll": "sha256-p0iLVL3w6V+dkrTJkk8l9aXBuQHriU3roAzvCSszBjw=",
       "FrostAura.Libraries.Data.dll": "sha256-1HwKuovByRUMHH7\/HzT+BOIx+spNfIscmmfZuzeJJ\/Q=",
       "Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll": "sha256-VGaB03HIjFg4jeK7BomIFzlhhY3vW5N+jWuRqZkbJsY=",
