@@ -5,14 +5,23 @@
 
 <InjectEmbeddedContent HtmlWrapper="style" ContentName="Catelog.razor.css" />
 <fa-catelog>
-    @foreach(var componentGroup in _componentTypeGroups)
-    {
-        <h2>@componentGroup.Key</h2>
-        <hr />
-
-        foreach (var componentType in componentGroup)
+    <ul>
+        @foreach(var componentGroup in _componentTypeGroups)
         {
-            <div>@componentType.FullName</div>
+            <li>
+                <h2>@componentGroup.Key</h2>
+                <hr />
+                <ul>
+                    @foreach (var componentType in componentGroup)
+                    {
+                        <li onclick="@(() => NavigateToComponent(componentType.FullName))">@componentType.FullName</li>
+                    }
+                </ul>
+            </li>
         }
-    }
+    </ul>
+
+    <div>
+        @ComponentFragment
+    </div>
 </fa-catelog>

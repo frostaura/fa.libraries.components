@@ -28,6 +28,10 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// Supported component types.
         /// </summary>
         private List<IGrouping<string, Type>> _componentTypeGroups = new List<IGrouping<string, Type>>();
+        /// <summary>
+        /// Component fragment to render.
+        /// </summary>
+        private RenderFragment ComponentFragment { get; set; }
 
         /// <summary>
         /// Lifecycle event.
@@ -37,6 +41,35 @@ namespace FrostAura.Libraries.Components.Container.Documentation
             base.OnInitialized();
 
             _componentTypeGroups = GetComponentTypes();
+        }
+
+        /// <summary>
+        /// Lifecycle event.
+        /// </summary>
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+
+            if (string.IsNullOrWhiteSpace(FocusedComponentName)) return;
+
+            var componentType = ComponentsAssembly
+                .GetTypes()
+                .SingleOrDefault(t => t.FullName == FocusedComponentName);
+
+            if (componentType == default) return;
+            if (componentType.IsGenericType)
+            {
+                componentType = componentType.MakeGenericType(typeof(object));
+            }
+
+            ComponentFragment = builder =>
+            {
+                var i = 0;
+
+                builder.OpenComponent(i++, componentType);
+                builder.AddAttribute(i++, nameof(BaseComponent<object>.EnableDemoMode), true);
+                builder.CloseComponent();
+            };
         }
 
         /// <summary>
@@ -55,6 +88,15 @@ namespace FrostAura.Libraries.Components.Container.Documentation
                 .ToList();
 
             return components;
+        }
+
+        /// <summary>
+        /// Navigate to a component's detail.
+        /// </summary>
+        /// <param name="fullComponentName">Full component name to navigate to.</param>
+        private void NavigateToComponent(string fullComponentName)
+        {
+            NavigationManager.NavigateTo($"/{fullComponentName}");
         }
     }
 }
