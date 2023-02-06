@@ -6,6 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Root\**" />
+    <Content Remove="Root\**" />
+    <EmbeddedResource Remove="Root\**" />
+    <None Remove="Root\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -23,13 +30,15 @@
     <None Remove="Interfaces\Resources\" />
     <None Remove="Content\CountdownBar.razor.css" />
     <None Remove="Extensions\" />
+    <None Remove="Presentational\Status\CountdownBar.razor.css" />
     <None Remove="Services\" />
     <None Remove="Services\Resources\" />
     <None Remove="Services\Navigation\" />
     <None Remove="Root\" />
-    <None Remove="Root\Status\" />
-    <None Remove="Root\Status\CountdownBar.razor.css" />
-    <None Remove="Root\Navigation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Presentational\Status\CountdownBar.razor.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\Resources\" />
@@ -37,11 +46,5 @@
     <Folder Include="Services\" />
     <Folder Include="Services\Resources\" />
     <Folder Include="Services\Navigation\" />
-    <Folder Include="Root\" />
-    <Folder Include="Root\Status\" />
-    <Folder Include="Root\Navigation\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Root\Status\CountdownBar.razor.css" />
   </ItemGroup>
 </Project>

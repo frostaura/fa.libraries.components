@@ -1,11 +1,10 @@
-﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Reflection;
 using FrostAura.Libraries.Components.Interfaces.Resources;
 
-namespace FrostAura.Libraries.Components.Root
+namespace FrostAura.Libraries.Components.Presentational
 {
     /// <summary>
     /// Component to inject content from an embedded file, into a Blazore component as HTML.

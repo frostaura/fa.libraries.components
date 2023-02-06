@@ -1,5 +1,4 @@
-﻿using System;
-using FrostAura.Libraries.Core.Interfaces.Reactive;
+﻿using FrostAura.Libraries.Core.Interfaces.Reactive;
 
 namespace FrostAura.Libraries.Components.Interfaces.Navigation
 {

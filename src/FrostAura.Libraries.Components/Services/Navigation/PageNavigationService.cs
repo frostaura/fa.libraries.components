@@ -1,5 +1,4 @@
-﻿using System;
-using FrostAura.Libraries.Components.Interfaces.Navigation;
+﻿using FrostAura.Libraries.Components.Interfaces.Navigation;
 using FrostAura.Libraries.Core.Extensions.Reactive;
 using FrostAura.Libraries.Core.Extensions.Validation;
 using FrostAura.Libraries.Core.Interfaces.Reactive;

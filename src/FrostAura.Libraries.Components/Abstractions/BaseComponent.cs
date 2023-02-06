@@ -1,5 +1,4 @@
-﻿using System;
-using FrostAura.Libraries.Components.Interfaces.Navigation;
+﻿using FrostAura.Libraries.Components.Interfaces.Navigation;
 using FrostAura.Libraries.Components.Models.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;

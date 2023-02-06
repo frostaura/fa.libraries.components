@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Components.Routing;
+﻿using Microsoft.AspNetCore.Components.Routing;
 using System.Diagnostics;
 
 namespace FrostAura.Libraries.Components.Models.Configuration

@@ -1,5 +1,4 @@
-﻿using System;
-using FrostAura.Libraries.Components.Interfaces.Resources;
+﻿using FrostAura.Libraries.Components.Interfaces.Resources;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Reflection;

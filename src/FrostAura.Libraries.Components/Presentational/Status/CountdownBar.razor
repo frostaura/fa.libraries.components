@@ -2,6 +2,6 @@
 @inherits BaseComponent<CountdownBar>
 
 <InjectEmbeddedContent ContentName="CountdownBar.razor.css" HtmlWrapper="style" AssetVersion="Version" />
-<countdown-bar style="animation: CountDown @($"{Duration.TotalMilliseconds}ms") infinite;">
+<countdown-bar style="animation: CountDown @($"{Duration.TotalMilliseconds}ms") @(Infinite ? "infinite" : string.Empty);">
     &nbsp;
 </countdown-bar>

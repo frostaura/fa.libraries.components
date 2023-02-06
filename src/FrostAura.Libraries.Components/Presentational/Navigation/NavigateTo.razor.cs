@@ -1,8 +1,7 @@
-﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Abstractions;
 using Microsoft.AspNetCore.Components;
 
-namespace FrostAura.Libraries.Components.Root.Navigation
+namespace FrostAura.Libraries.Components.Presentational.Navigation
 {
     /// <summary>
     /// Component to automatically redirect to a given route.

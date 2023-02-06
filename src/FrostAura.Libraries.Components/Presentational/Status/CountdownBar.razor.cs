@@ -1,8 +1,7 @@
-﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Abstractions;
 using Microsoft.AspNetCore.Components;
 
-namespace FrostAura.Libraries.Components.Root.Status
+namespace FrostAura.Libraries.Components.Presentational.Status
 {
     /// <summary>
     /// Component to display a decreasing bar after which an event fires.
