@@ -9,6 +9,10 @@ namespace FrostAura.Libraries.Components.Presentational.Status
     public partial class CountdownBar : BaseComponent<CountdownBar>, IDisposable
     {
         /// <summary>
+        /// The current version of the component.
+        /// </summary>
+        public override Version Version { get; } = new Version(1, 0, 0);
+        /// <summary>
         /// Duration of the countdown. 
         /// </summary>
         [Parameter]
@@ -48,21 +52,21 @@ namespace FrostAura.Libraries.Components.Presentational.Status
 
             if (!firstRender) return;
 
-            await InitiateCountdown();
+            await InitiateCountdownAsync();
         }
 
         /// <summary>
         /// Initiate the countdown.
         /// </summary>
         /// <returns></returns>
-        private async Task InitiateCountdown()
+        private async Task InitiateCountdownAsync()
         {
             if (CancellationTokenSource.Token.IsCancellationRequested) return;
 
             await Task.Delay(Duration);
             OnCountdownZero?.Invoke();
 
-            if (Infinite) await InitiateCountdown();
+            if (Infinite) await InitiateCountdownAsync();
         }
     }
 }

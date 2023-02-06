@@ -1,0 +1,11 @@
+﻿@using FrostAura.Libraries.Components.Abstractions
+@inherits BaseComponent<DynamicField>
+
+<InjectEmbeddedContent ContentName="DynamicField.razor.css" HtmlWrapper="style" />
+<fa-dynamic-field class="form-group">
+    <label for="@_fieldId">@_fieldLabel</label>
+    <div>
+        @GenerateInputComponent()
+        @GenerateValidationComponent()
+    </div>
+</fa-dynamic-field>

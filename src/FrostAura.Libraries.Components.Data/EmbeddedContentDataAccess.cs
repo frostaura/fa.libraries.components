@@ -1,15 +1,15 @@
-﻿using FrostAura.Libraries.Components.Interfaces.Resources;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Reflection;
 using FrostAura.Libraries.Core.Extensions.Validation;
+using FrostAura.Libraries.Components.Data.Interfaces;
 
-namespace FrostAura.Libraries.Components.Services.Resources
+namespace FrostAura.Libraries.Components.Data
 {
     /// <summary>
-    /// Service to manipulate and fetch embedded content.
+    /// A data access service to manipulate and fetch embedded content.
     /// </summary>
-    public class EmbeddedContentService : IContentService
+    public class EmbeddedContentDataAccess : IContentDataAccess
     {
         /// <summary>
         /// Instance logger.
@@ -17,10 +17,10 @@ namespace FrostAura.Libraries.Components.Services.Resources
         private readonly ILogger _logger;
 
         /// <summary>
-        /// Provide dependencies.
+        /// Overloaded constructr to allow for dependency injection.
         /// </summary>
         /// <param name="logger">Instance logger.</param>
-        public EmbeddedContentService(ILogger<EmbeddedContentService> logger)
+        public EmbeddedContentDataAccess(ILogger<EmbeddedContentDataAccess> logger)
         {
             _logger = logger
                 .ThrowIfNull(nameof(logger));
@@ -32,7 +32,7 @@ namespace FrostAura.Libraries.Components.Services.Resources
         /// <typeparam name="TParsedContentResult">Type which to cast the content to if found.</typeparam>
         /// <param name="key">Key whihc to look up the content for.</param>
         /// <param name="assembly">Assembly to load the content from.</param>
-        /// <param name="token">Cancellation token.</param>
+        /// <param name="token">Cancellation token to cancel downstream operations if required.</param>
         /// <returns>Parsed content or default.</returns>
         public async Task<TParsedContentResult> GetContentByKeyAsync<TParsedContentResult>(string key, Assembly assembly, CancellationToken token)
         {
@@ -59,7 +59,7 @@ namespace FrostAura.Libraries.Components.Services.Resources
             }
             catch (Exception e)
             {
-                _logger.LogDebug($"Getting embedded content with key '{key}' failed: {e.Message}", e);
+                _logger.LogWarning($"Getting embedded content with key '{key}' failed: {e.Message}", e);
             }
 
             return default;

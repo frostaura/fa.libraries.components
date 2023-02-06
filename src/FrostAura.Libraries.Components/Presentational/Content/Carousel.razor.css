@@ -1,0 +1,29 @@
+﻿fa-carousel {
+    display: block;
+    min-width: 100px;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+    fa-carousel .track {
+        height: 100%;
+        transition: transform 250ms ease-in;
+    }
+
+    fa-carousel .scene {
+        position: absolute;
+    }
+
+    fa-carousel .scene,
+    fa-carousel .background {
+        width: 100%;
+        height: 100%;
+    }
+
+    fa-carousel .background {
+        object-fit: contain;
+    }
+
+    fa-carousel .name {
+        color: white;
+    }

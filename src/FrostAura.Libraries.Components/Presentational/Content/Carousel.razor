@@ -1,0 +1,17 @@
+﻿@using FrostAura.Libraries.Components.Abstractions
+@inherits BaseComponent<Carousel>
+
+<InjectEmbeddedContent ContentName="Carousel.razor.css" HtmlWrapper="style" />
+<fa-carousel id="@Id">
+    <div class="track" style="transform: translateX(0px)">
+        @for (int sceneIndex = 0; sceneIndex < Scenes.Count; sceneIndex++)
+        {
+            <div id="@Scenes[sceneIndex].Id"
+             class="scene @(IsSceneActive(Scenes[sceneIndex]) ? "active" : string.Empty)"
+             style="left: @(sceneIndex*100)%">
+                <img class="background" src="@Scenes[sceneIndex].BackgroundUrl" alt="@Scenes[sceneIndex].Name" />
+                <div class="name">@Scenes[sceneIndex].Name</div>
+            </div>
+        }
+    </div>
+</fa-carousel>

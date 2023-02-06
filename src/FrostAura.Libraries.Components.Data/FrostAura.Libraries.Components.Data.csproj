@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FrostAura.Libraries.Core" Version="7.0.1" />
+    <PackageReference Include="FrostAura.Libraries.Data" Version="7.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Microsoft.JSInterop" Version="7.0.2" />
+    <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

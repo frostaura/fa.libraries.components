@@ -1,9 +1,8 @@
-﻿using FrostAura.Libraries.Components.Interfaces.Navigation;
-using FrostAura.Libraries.Components.Interfaces.Resources;
-using FrostAura.Libraries.Components.Models.Configuration;
-using FrostAura.Libraries.Components.Services.Navigation;
-using FrostAura.Libraries.Components.Services.Resources;
+﻿using FrostAura.Libraries.Components.Shared.Models.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using FrostAura.Libraries.Components.Managers.Extensions;
+using FrostAura.Libraries.Components.Engines.Extensions;
+using FrostAura.Libraries.Components.Data.Extensions;
 
 namespace FrostAura.Libraries.Components.Extensions
 {
@@ -17,7 +16,6 @@ namespace FrostAura.Libraries.Components.Extensions
         /// </summary>
         /// <param name="services">Application services collection.</param>
         /// <param name="builder">Configuration builder.</param>
-        /// <param name="config">Application configuration.</param>
         /// <returns>Application services collection.</returns>
         public static IServiceCollection AddFrostAuraComponents(this IServiceCollection services, Action<FrostAuraApplicationConfiguration> builder)
         {
@@ -27,15 +25,17 @@ namespace FrostAura.Libraries.Components.Extensions
             // Cascade desired options with the defaults.
             builder(configuration);
 
-            return services
-                .AddSingleton<FrostAuraApplicationConfiguration>(sp =>
-                {
-                    return new FrostAuraApplicationConfiguration();
-                })
-                .AddScoped<IContentService, EmbeddedContentService>()
-                .AddScoped<INavigationService, PageNavigationService>()
-                .AddSingleton(configuration);
-        }
+            var newServices = services
+                .AddFrostAuraComponentsManagers()
+                .AddFrostAuraComponentsEngines()
+                .AddFrostAuraComponentsData();
 
+            newServices.AddHttpClient("default", c =>
+            {
+                c.BaseAddress = new Uri(configuration.AppBaseUrl);
+            });
+
+            return newServices;
+        }
     }
 }

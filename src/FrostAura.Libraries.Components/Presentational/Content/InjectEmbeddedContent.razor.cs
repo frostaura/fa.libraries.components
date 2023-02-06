@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Reflection;
-using FrostAura.Libraries.Components.Interfaces.Resources;
+using FrostAura.Libraries.Components.Data.Interfaces;
 
-namespace FrostAura.Libraries.Components.Presentational
+namespace FrostAura.Libraries.Components.Presentational.Content
 {
     /// <summary>
     /// Component to inject content from an embedded file, into a Blazore component as HTML.
@@ -12,10 +12,14 @@ namespace FrostAura.Libraries.Components.Presentational
     public partial class InjectEmbeddedContent : BaseComponent<InjectEmbeddedContent>
     {
         /// <summary>
+        /// The current version of the component.
+        /// </summary>
+        public override Version Version { get; } = new Version(1, 0, 0);
+        /// <summary>
         /// Application content service.
         /// </summary>
         [Inject]
-        public IContentService ContentService { get; set; }
+        public IContentDataAccess ContentService { get; set; }
         /// <summary>
         /// JavaScript runtime engine.
         /// </summary>

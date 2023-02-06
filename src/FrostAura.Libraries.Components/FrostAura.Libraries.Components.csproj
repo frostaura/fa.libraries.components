@@ -19,32 +19,39 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FrostAura.Libraries.Data" Version="7.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-rc1.20223.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.2" />
-    <PackageReference Include="FrostAura.Libraries.Core" Version="7.0.0" />
+    <PackageReference Include="FrostAura.Libraries.Core" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Components" />
     <None Remove="FrostAura.Libraries.Core" />
-    <None Remove="Interfaces\Resources\" />
     <None Remove="Content\CountdownBar.razor.css" />
     <None Remove="Extensions\" />
+    <None Remove="Presentational\Content\Carousel.razor.css" />
+    <None Remove="Presentational\Input\DynamicForm.razor.css" />
     <None Remove="Presentational\Status\CountdownBar.razor.css" />
     <None Remove="Services\" />
-    <None Remove="Services\Resources\" />
-    <None Remove="Services\Navigation\" />
     <None Remove="Root\" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Presentational\Content\Carousel.razor.css" />
+    <EmbeddedResource Include="Presentational\Input\DynamicForm.razor.css" />
     <EmbeddedResource Include="Presentational\Status\CountdownBar.razor.css" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\Resources\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Resources\" />
-    <Folder Include="Services\Navigation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Data\FrostAura.Libraries.Components.Data.csproj" />
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Engines\FrostAura.Libraries.Components.Engines.csproj" />
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Managers\FrostAura.Libraries.Components.Managers.csproj" />
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj" />
   </ItemGroup>
 </Project>
