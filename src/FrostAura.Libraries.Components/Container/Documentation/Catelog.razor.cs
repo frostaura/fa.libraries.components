@@ -15,6 +15,11 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// </summary>
         public override Version Version { get; } = new Version(0, 0, 1);
         /// <summary>
+        /// The assembly which to browse for components.
+        /// </summary>
+        [Parameter]
+        public Assembly ComponentsAssembly { get; set; }
+        /// <summary>
         /// The current component to render documentation for, if any.
         /// </summary>
         [Parameter]
@@ -40,8 +45,7 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// <returns>A collection of components inheriting from the BaseComponent type.</returns>
         private List<IGrouping<string, Type>> GetComponentTypes()
         {
-            var components = GetType()
-                .Assembly
+            var components = ComponentsAssembly
                 .GetTypes()
                 .Where(t => !t.IsAbstract && !t.IsInterface)
                 .Where(t => t.BaseType.IsGenericType)

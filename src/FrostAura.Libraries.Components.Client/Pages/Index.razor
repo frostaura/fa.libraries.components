@@ -2,7 +2,9 @@
 @page "/{ComponentName}"
 
 <PageTitle>FrostAura Components</PageTitle>
-<FrostAura.Libraries.Components.Container.Documentation.Catelog FocusedComponentName="@ComponentName"></FrostAura.Libraries.Components.Container.Documentation.Catelog>
+<FrostAura.Libraries.Components.Container.Documentation.Catelog
+    FocusedComponentName="@ComponentName"
+    ComponentsAssembly="@typeof(FrostAura.Libraries.Components.Container.Documentation.Catelog).Assembly"></FrostAura.Libraries.Components.Container.Documentation.Catelog>
 
 @code {
     [Parameter]
