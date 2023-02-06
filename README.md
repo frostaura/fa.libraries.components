@@ -4,7 +4,8 @@ This is a collection of all FrostAura Razor components, used in Blazor Server an
 ## Status
 | Project | Status | Platform
 | --- | --- | --- |
-| FrostAura.Libraries.Components | [![NuGet Workflow](https://github.com/faGH/fa.standard.components/actions/workflows/nuget_workflow.yml/badge.svg)](https://github.com/faGH/fa.standard.components/actions/workflows/nuget_workflow.yml) | GitHub Actions
+| [FrostAura.Libraries.Components](https://fagh.github.io/fa.libraries.components/) | [![NuGet Workflow](https://github.com/faGH/fa.standard.components/actions/workflows/nuget_workflow.yml/badge.svg)](https://github.com/faGH/fa.standard.components/actions/workflows/nuget_workflow.yml) | GitHub Actions
+| FrostAura Components GitHub Pages | [![GitHub Pages Workflow](https://github.com/faGH/fa.standard.components/actions/workflows/pages.yml/badge.svg)](https://github.com/faGH/fa.standard.components/actions/workflows/pages.yml) | GitHub Actions
 
 ## NuGet Packages
 | Project | Nuget |
