@@ -1,0 +1,29 @@
+name: GitHub Pages Workflow
+on:
+  push:
+    branches:
+    - main
+    - master
+env:
+  DOTNET_VERSION: '7.0.x'
+jobs:
+  build-nuget-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core SDK ${{ env.DOTNET_VERSION }}
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    - name: Install Dependencies
+      run: dotnet restore src/
+    - name: Build
+      run: dotnet build src/ --configuration Release --no-restore
+    - name: Publish
+      run: dotnet publish src/ --configuration Release -o release --no-restore
+    - name: Commit wwwroot to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: release/wwwroot
