@@ -14,7 +14,7 @@
                 <ul>
                     @foreach (var componentType in componentGroup)
                     {
-                        <li onclick="@(() => NavigateToComponent(componentType.FullName))">@componentType.FullName</li>
+                        <li onclick="@(() => SafelyNavigateTo(componentType.FullName))">@componentType.FullName</li>
                     }
                 </ul>
             </li>

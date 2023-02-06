@@ -32,7 +32,7 @@ namespace FrostAura.Libraries.Components.Extensions
 
             newServices.AddHttpClient("default", c =>
             {
-                c.BaseAddress = new Uri(configuration.AppBaseUrl);
+                c.BaseAddress = new Uri(FrostAuraApplicationConfiguration.AppBaseUrl);
             });
 
             return newServices;

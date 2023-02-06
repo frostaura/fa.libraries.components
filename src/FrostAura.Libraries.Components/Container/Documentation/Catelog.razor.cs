@@ -89,14 +89,5 @@ namespace FrostAura.Libraries.Components.Container.Documentation
 
             return components;
         }
-
-        /// <summary>
-        /// Navigate to a component's detail.
-        /// </summary>
-        /// <param name="fullComponentName">Full component name to navigate to.</param>
-        private void NavigateToComponent(string fullComponentName)
-        {
-            NavigationManager.NavigateTo($"/{fullComponentName}");
-        }
     }
 }

@@ -12,6 +12,7 @@ using FrostAura.Libraries.Components.Shared.Models.Input;
 using Microsoft.AspNetCore.Components.CompilerServices;
 using Microsoft.Extensions.Logging;
 using FrostAura.Libraries.Data.Attributes;
+using FrostAura.Libraries.Components.Shared.Models.Configuration;
 
 namespace FrostAura.Libraries.Components.Presentational.Input
 {
@@ -259,9 +260,8 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         /// <returns>Void</returns>
         private async Task HandleSetImageValue(InputFileChangeEventArgs args)
         {
-            var configuration = await ClientDataAccess.GetClientConfigurationAsync(CancellationToken.None);
             var imagesDirectoryName = "images";
-            var baseUrl = Path.Combine(configuration.AppBaseUrl, imagesDirectoryName);
+            var baseUrl = Path.Combine(FrostAuraApplicationConfiguration.AppBaseUrl, imagesDirectoryName);
             var directory = Path.Combine(Directory.GetCurrentDirectory(), imagesDirectoryName);
             var id = Guid.NewGuid().ToString();
             var filename = $"{directory}/{id}.png";

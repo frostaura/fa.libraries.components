@@ -1,4 +1,5 @@
 ﻿using FrostAura.Libraries.Components.Data.Interfaces;
+using FrostAura.Libraries.Components.Shared.Models.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using Microsoft.JSInterop;
@@ -44,6 +45,17 @@ namespace FrostAura.Libraries.Components.Abstractions
         /// </summary>
         [Inject]
         protected IJSRuntime JsRuntime { get; set; }
+
+        /// <summary>
+        /// Navigate to a relative path safely.
+        /// </summary>
+        /// <param name="relativePath">The relative path to navigate to. Example: "/components"</param>
+        protected void SafelyNavigateTo(string relativePath)
+        {
+            var fullAddress = Path.Combine(FrostAuraApplicationConfiguration.AppBaseUrl, relativePath);
+
+            NavigationManager.NavigateTo(fullAddress);
+        }
     }
 }
 

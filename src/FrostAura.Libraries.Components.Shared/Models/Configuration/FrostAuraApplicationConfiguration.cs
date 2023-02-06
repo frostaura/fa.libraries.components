@@ -29,7 +29,7 @@ namespace FrostAura.Libraries.Components.Shared.Models.Configuration
         /// 
         /// Example: "https://pointskeeper.azurewebsites.net"
         /// </summary>
-        public string AppBaseUrl { get; set; }
+        public static string AppBaseUrl { get; set; }
         /// <summary>
         /// Platform-specific maps API key.
         /// </summary>
