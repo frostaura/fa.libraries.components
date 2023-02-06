@@ -1,0 +1,18 @@
+﻿@using FrostAura.Libraries.Components.Abstractions
+@using FrostAura.Libraries.Components.Presentational.Content
+@using FrostAura.Libraries.Components.Shared.Extensions;
+@inherits BaseComponent<Catelog>
+
+<InjectEmbeddedContent HtmlWrapper="style" ContentName="Catelog.razor.css" />
+<fa-catelog>
+    @foreach(var componentGroup in _componentTypeGroups)
+    {
+        <h2>@componentGroup.Key</h2>
+        <hr />
+
+        foreach (var componentType in componentGroup)
+        {
+            <div>@componentType.FullName</div>
+        }
+    }
+</fa-catelog>

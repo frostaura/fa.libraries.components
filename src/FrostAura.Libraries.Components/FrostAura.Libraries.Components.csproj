@@ -29,20 +29,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Container\Documentation\Catelog.razor.css" />
     <None Remove="Microsoft.AspNetCore.Components" />
     <None Remove="FrostAura.Libraries.Core" />
     <None Remove="Content\CountdownBar.razor.css" />
     <None Remove="Extensions\" />
     <None Remove="Presentational\Content\Carousel.razor.css" />
     <None Remove="Presentational\Input\DynamicForm.razor.css" />
+    <None Remove="Presentational\Map\GoogleMap.razor.css" />
+    <None Remove="Presentational\Map\GoogleMap.razor.js" />
     <None Remove="Presentational\Status\CountdownBar.razor.css" />
     <None Remove="Services\" />
     <None Remove="Root\" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Container\Documentation\Catelog.razor.css" />
     <EmbeddedResource Include="Presentational\Content\Carousel.razor.css" />
     <EmbeddedResource Include="Presentational\Input\DynamicForm.razor.css" />
+    <EmbeddedResource Include="Presentational\Map\GoogleMap.razor.css" />
+    <EmbeddedResource Include="Presentational\Map\GoogleMap.razor.js" />
     <EmbeddedResource Include="Presentational\Status\CountdownBar.razor.css" />
   </ItemGroup>
   <ItemGroup>

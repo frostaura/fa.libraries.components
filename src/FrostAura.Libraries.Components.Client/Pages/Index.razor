@@ -1,10 +1,10 @@
 ﻿@page "/"
-@page "/components"
+@page "/{ComponentName}"
 
 <PageTitle>FrostAura Components</PageTitle>
+<FrostAura.Libraries.Components.Container.Documentation.Catelog FocusedComponentName="@ComponentName"></FrostAura.Libraries.Components.Container.Documentation.Catelog>
 
-<label for="cb1">Countdown Bar</label>
-<FrostAura.Libraries.Components.Presentational.Status.CountdownBar
-    id="cb1"
-    Duration="TimeSpan.FromSeconds(10)"
-    Infinite="true"></FrostAura.Libraries.Components.Presentational.Status.CountdownBar>
+@code {
+    [Parameter]
+    public string ComponentName { get; set; }
+}
