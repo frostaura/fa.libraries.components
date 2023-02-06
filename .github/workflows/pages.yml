@@ -23,6 +23,8 @@ jobs:
       run: dotnet publish src/ --configuration Release -o release --no-restore
     - name: Add .nojekyll File
       run: touch release/wwwroot/.nojekyll
+    - name: Copy index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
