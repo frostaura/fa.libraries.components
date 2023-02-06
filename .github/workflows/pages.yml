@@ -21,6 +21,8 @@ jobs:
       run: dotnet build src/ --configuration Release --no-restore
     - name: Publish
       run: dotnet publish src/ --configuration Release -o release --no-restore
+    - name: Add .nojekyll File
+      run: touch release/wwwroot/.nojekyll
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
