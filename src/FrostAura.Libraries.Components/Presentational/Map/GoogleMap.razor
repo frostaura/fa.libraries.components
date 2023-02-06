@@ -1,0 +1,8 @@
+﻿@using FrostAura.Libraries.Components.Abstractions
+@inherits BaseComponent<GoogleMap>
+
+<InjectEmbeddedContent HtmlWrapper="style" ContentName="GoogleMap.razor.css" />
+<InjectEmbeddedContent ContentName="GoogleMap.razor.js" HtmlWrapper="script" RequestImmidiateInvocation="true" OnImmidiateInvocation="async _ => await InitializeMapAsync()" />
+<fa-google-map>
+    <div id="@Id"></div>
+</fa-google-map>

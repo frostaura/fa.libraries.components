@@ -18,7 +18,7 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         /// <summary>
         /// The current version of the component.
         /// </summary>
-        public override Version Version { get; } = new Version(1, 0, 0);
+        public override Version Version { get; } = new Version(0, 0, 1);
         /// <summary>
         /// Form data context to use when updating / editing.
         /// </summary>

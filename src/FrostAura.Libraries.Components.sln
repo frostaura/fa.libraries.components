@@ -5,17 +5,17 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Libraries.Components.Client", "FrostAura.Libraries.Components.Client\FrostAura.Libraries.Components.Client.csproj", "{F5ED0D86-FB35-42FA-9A08-EB236C9881CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Libraries.Components", "FrostAura.Libraries.Components\FrostAura.Libraries.Components.csproj", "{8020932F-19DE-4BA9-9FDC-75ECCE327567}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Libraries.Components", "FrostAura.Libraries.Components\FrostAura.Libraries.Components.csproj", "{8020932F-19DE-4BA9-9FDC-75ECCE327567}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layered Architecture", "Layered Architecture", "{65C7D4BE-B899-490E-9667-26DC21223812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Libraries.Components.Managers", "FrostAura.Libraries.Components.Managers\FrostAura.Libraries.Components.Managers.csproj", "{F8C17BFD-A635-44AB-A138-84ACDD9B2F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Libraries.Components.Managers", "FrostAura.Libraries.Components.Managers\FrostAura.Libraries.Components.Managers.csproj", "{F8C17BFD-A635-44AB-A138-84ACDD9B2F35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Libraries.Components.Data", "FrostAura.Libraries.Components.Data\FrostAura.Libraries.Components.Data.csproj", "{FB3B5B9A-BB5A-4D0A-AE25-F4B6C175DC83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Libraries.Components.Data", "FrostAura.Libraries.Components.Data\FrostAura.Libraries.Components.Data.csproj", "{FB3B5B9A-BB5A-4D0A-AE25-F4B6C175DC83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Libraries.Components.Engines", "FrostAura.Libraries.Components.Engines\FrostAura.Libraries.Components.Engines.csproj", "{42841894-F313-4F55-BD1E-7C9BACD699F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Libraries.Components.Engines", "FrostAura.Libraries.Components.Engines\FrostAura.Libraries.Components.Engines.csproj", "{42841894-F313-4F55-BD1E-7C9BACD699F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostAura.Libraries.Components.Shared", "FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj", "{D7D49A34-0648-4318-90CE-E60BD79E5238}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostAura.Libraries.Components.Shared", "FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj", "{D7D49A34-0648-4318-90CE-E60BD79E5238}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

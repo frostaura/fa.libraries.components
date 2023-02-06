@@ -1,0 +1,7 @@
+﻿@using FrostAura.Libraries.Components.Abstractions
+@inherits BaseComponent<AsyncLoader>
+
+@if (_isLoading)
+    @LoadingContent
+else
+    @FinalContent
