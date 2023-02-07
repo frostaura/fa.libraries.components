@@ -3,7 +3,7 @@
 @inherits BaseComponent<DynamicForm<TDataContextType>>
 
 <InjectEmbeddedContent ContentName="DynamicForm.razor.css" HtmlWrapper="style" />
-<fa-dynamic-form>
+<fa-input-dynamic-form id="@Id">
     <EditForm Model="@DataContext" OnValidSubmit="@HandleOnValidSubmit">
         <!-- Allows for validating object trees. Requires: Microsoft.AspNetCore.Components.DataAnnotations.Validation -->
         <ObjectGraphDataAnnotationsValidator />
@@ -34,7 +34,7 @@
             <ValidationSummary />
         }
     </EditForm>
-</fa-dynamic-form>
+</fa-input-dynamic-form>
 
 <!--
     Build-in form components.

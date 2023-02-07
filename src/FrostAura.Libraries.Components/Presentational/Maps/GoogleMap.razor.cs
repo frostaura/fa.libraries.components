@@ -4,7 +4,7 @@ using FrostAura.Libraries.Components.Shared.Models.Map;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace FrostAura.Libraries.Components.Presentational.Map
+namespace FrostAura.Libraries.Components.Presentational.Maps
 {
     /// <summary>
     /// Google map component.

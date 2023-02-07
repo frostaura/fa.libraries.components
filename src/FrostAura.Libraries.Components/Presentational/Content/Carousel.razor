@@ -2,7 +2,7 @@
 @inherits BaseComponent<Carousel>
 
 <InjectEmbeddedContent ContentName="Carousel.razor.css" HtmlWrapper="style" />
-<fa-carousel id="@Id">
+<fa-content-carousel id="@Id">
     <div class="track" style="transform: translateX(0px)">
         @for (int sceneIndex = 0; sceneIndex < Scenes.Count; sceneIndex++)
         {
@@ -14,4 +14,4 @@
             </div>
         }
     </div>
-</fa-carousel>
+</fa-content-carousel>

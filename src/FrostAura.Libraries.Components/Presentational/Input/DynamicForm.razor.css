@@ -1,26 +1,11 @@
-﻿fa-dynamic-form {
+﻿fa-input-dynamic-form {
     display: block;
 }
 
-    fa-dynamic-form > div {
+    fa-input-dynamic-form > div {
         color: var(--fa-color-positive);
     }
 
-    fa-dynamic-form .validation-message {
+    fa-input-dynamic-form .validation-message {
         color: var(--fa-color-negative);
     }
-
-fa-dynamic-field > div {
-    padding-bottom: 15px;
-    padding-top: 5px;
-}
-
-fa-dynamic-field input[type=file] {
-    display: none;
-}
-
-fa-dynamic-field .image-picker-image {
-    height: 75px;
-    border: 2px solid var(--fa-background-secondary);
-    cursor: pointer;
-}

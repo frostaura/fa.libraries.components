@@ -45,7 +45,7 @@
     },
     // Initialize the map drivers.
     initializeMapAsync: async (request) => {
-        const mapElement = document.querySelector('fa-google-map > div[id="' + request.id + '"]');
+        const mapElement = document.querySelector('fa-maps-google-map > div[id="' + request.id + '"]');
 
         if (!mapElement) throw new Error('No map element found.');
 
@@ -69,7 +69,7 @@
     // Wait for the component's styling to kick in async.
     waitForComponentStylingAsync: async (request) => {
         const checkWidthRecursively = (resolve) => {
-            const mapElement = document.querySelector('fa-google-map > div[id="' + request.id + '"]');
+            const mapElement = document.querySelector('fa-maps-google-map > div[id="' + request.id + '"]');
             const parentComponent = mapElement.parentElement;
             const width = parentComponent.offsetWidth;
 

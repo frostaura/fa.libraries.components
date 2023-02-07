@@ -4,7 +4,7 @@
 @inherits BaseComponent<Catelog>
 
 <InjectEmbeddedContent HtmlWrapper="style" ContentName="Catelog.razor.css" />
-<fa-catelog>
+<fa-documentation-catelog id="@Id">
     <ul>
         @foreach(var componentGroup in _componentTypeGroups)
         {
@@ -24,4 +24,4 @@
     <div>
         @ComponentFragment
     </div>
-</fa-catelog>
+</fa-documentation-catelog>

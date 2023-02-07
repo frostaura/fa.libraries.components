@@ -8,7 +8,7 @@
     }
 }
 
-countdown-bar {
+fa-status-countdown-bar {
     display: block;
     background-color: var(--fa-background-secondary);
     width: 100%;
