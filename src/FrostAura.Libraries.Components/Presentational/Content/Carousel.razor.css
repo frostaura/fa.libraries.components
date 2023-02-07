@@ -1,7 +1,7 @@
 ﻿fa-content-carousel {
     display: block;
-    min-width: 100px;
-    min-height: 80px;
+    width: 250px;
+    height: 200px;
     overflow: hidden;
 }
 
