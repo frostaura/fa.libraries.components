@@ -1,4 +1,5 @@
-﻿using FrostAura.Libraries.Components.Shared.Abstractions;
+﻿using System.ComponentModel;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 
@@ -7,6 +8,7 @@ namespace FrostAura.Libraries.Components.Presentational.Content
     /// <summary>
     /// Toggle between two templates as async work gets done.
     /// </summary>
+    [Description("Toggle between two templates as async work gets done.")]
     public partial class AsyncLoader : BaseComponent<AsyncLoader>
     {
         /// <summary>
@@ -17,16 +19,19 @@ namespace FrostAura.Libraries.Components.Presentational.Content
         /// Content to display during loading.
         /// </summary>
         [Parameter]
+        [Description("Content to display during loading.")]
         public RenderFragment LoadingContent { get; set; }
         /// <summary>
         /// Content to display after loading.
         /// </summary>
         [Parameter]
+        [Description("Content to display after loading.")]
         public RenderFragment FinalContent { get; set; }
         /// <summary>
         /// Async work to complete.
         /// </summary>
         [Parameter]
+        [Description("Async work to complete.")]
         public Task AsyncWork { get; set; }
         /// <summary>
         /// Whether the component is currently busy.

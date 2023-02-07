@@ -1,6 +1,8 @@
 ﻿@using FrostAura.Libraries.Components.Shared.Abstractions
 @using FrostAura.Libraries.Components.Presentational.Content
 @using FrostAura.Libraries.Components.Shared.Extensions;
+@using System.Reflection;
+@using System.ComponentModel;
 @inherits BaseComponent<CatelogItem>
 
 <InjectEmbeddedContent HtmlWrapper="style" ContentName="CatelogItem.razor.css" />
@@ -8,15 +10,24 @@
     <h2>@ComponentName.Split('.').Last()</h2>
     <label>v @GetComponentVersion()</label>
     <hr />
+
     <label>Description</label>
     <div>@GetDescription()</div>
+
     <label>Full Name</label>
     <div>@ComponentName</div>
+
     <label>Example</label>
     <div>@ComponentFragment</div>
+
     <h3>Parameters</h3>
     <hr />
-    Parameters...
+    @foreach (var property in GetProperties())
+    {
+        <label>@property.Name : <i>@property.PropertyType.Name</i></label>
+        <div>@(property.GetCustomAttribute<DescriptionAttribute>()?.Description)</div>
+    }
+
     <h3>Styles</h3>
     <hr />
     Styles used and their descriptions...

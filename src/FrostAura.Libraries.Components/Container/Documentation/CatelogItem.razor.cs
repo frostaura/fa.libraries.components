@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Reflection;
 using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Shared.Attributes;
@@ -67,9 +68,37 @@ namespace FrostAura.Libraries.Components.Container.Documentation
             };
         }
 
+        /// <summary>
+        /// Get the component description from the DescriptionAttribute upon the component class.
+        /// </summary>
+        /// <returns>The component description from the DescriptionAttribute upon the component class.</returns>
         private string GetDescription()
         {
-            return "Dummy Description";
+            var componentType = ComponentsAssembly
+                .GetTypes()
+                .SingleOrDefault(t => t.FullName == ComponentName);
+            var descriptionAttr = componentType
+                .GetCustomAttribute<DescriptionAttribute>();
+
+            return descriptionAttr?.Description ?? "No description. Add a DescriptionAttribute to your component class to set one.";
+        }
+
+        /// <summary>
+        /// Get all properties on the componenty type that have description attributes.
+        /// </summary>
+        /// <returns></returns>
+        private List<PropertyInfo> GetProperties()
+        {
+            var componentType = ComponentsAssembly
+                .GetTypes()
+                .SingleOrDefault(t => t.FullName == ComponentName);
+            var propertiesWithDescriptions = componentType
+                .GetProperties()
+                .Where(t => t.GetCustomAttribute<DescriptionAttribute>() != default)
+                .OrderBy(p => p.Name)
+                .ToList();
+
+            return propertiesWithDescriptions;
         }
 
         /// <summary>
