@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Drawing;
-using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Presentational.Input;
 using FrostAura.Libraries.Components.Shared.Attributes;
 using FrostAura.Libraries.Components.Shared.Enums.Input;

@@ -1,5 +1,5 @@
 ﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 
 namespace FrostAura.Libraries.Components.Presentational.Status
 {

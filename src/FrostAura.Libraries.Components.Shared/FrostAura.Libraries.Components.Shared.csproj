@@ -15,8 +15,10 @@
 
   <ItemGroup>
     <None Remove="Attributes\" />
+    <None Remove="Abstractions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
+    <Folder Include="Abstractions\" />
   </ItemGroup>
 </Project>

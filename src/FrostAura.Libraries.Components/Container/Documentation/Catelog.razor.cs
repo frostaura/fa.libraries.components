@@ -1,4 +1,4 @@
-﻿using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Shared.Attributes;
 using FrostAura.Libraries.Components.Shared.Extensions;
 using FrostAura.Libraries.Data.Attributes;
@@ -27,6 +27,11 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         [Parameter]
         public string? FocusedComponentName { get; set; }
         /// <summary>
+        /// A delegate to execute on the selection of a component.
+        /// </summary>
+        [Parameter]
+        public Action<string>? OnComponentSelected { get; set; }
+        /// <summary>
         /// Supported component types.
         /// </summary>
         private List<IGrouping<string, Type>> _componentTypeGroups = new List<IGrouping<string, Type>>();
@@ -38,19 +43,11 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// <summary>
         /// Lifecycle event.
         /// </summary>
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
-
-            _componentTypeGroups = GetComponentTypes();
-        }
-
-        /// <summary>
-        /// Lifecycle event.
-        /// </summary>
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
+
+            _componentTypeGroups = GetComponentTypes();
 
             if (string.IsNullOrWhiteSpace(FocusedComponentName)) return;
 
@@ -84,6 +81,8 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// <returns>A collection of components inheriting from the BaseComponent type.</returns>
         private List<IGrouping<string, Type>> GetComponentTypes()
         {
+            if (ComponentsAssembly == default) return new List<IGrouping<string, Type>>();
+
             var components = ComponentsAssembly
                 .GetTypes()
                 .Where(t => !t.IsAbstract && !t.IsInterface)
@@ -95,6 +94,16 @@ namespace FrostAura.Libraries.Components.Container.Documentation
                 .ToList();
 
             return components;
+        }
+
+        /// <summary>
+        /// Handle a selection of a component. If there is a callback registered, call it otherwise perform a nagvigation.
+        /// </summary>
+        /// <param name="componentName">Selected component name.</param>
+        private void ComponentSelectedHandler(string componentName)
+        {
+            if (OnComponentSelected == default) SafelyNavigateTo(componentName);
+            else OnComponentSelected.Invoke(componentName);
         }
     }
 }

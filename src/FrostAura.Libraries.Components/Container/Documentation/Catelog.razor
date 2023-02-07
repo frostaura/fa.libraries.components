@@ -1,4 +1,4 @@
-﻿@using FrostAura.Libraries.Components.Abstractions
+﻿@using FrostAura.Libraries.Components.Shared.Abstractions
 @using FrostAura.Libraries.Components.Presentational.Content
 @using FrostAura.Libraries.Components.Shared.Extensions;
 @inherits BaseComponent<Catelog>
@@ -14,7 +14,7 @@
                     <ul class="components">
                         @foreach (var componentType in componentGroup)
                         {
-                            <li onclick="@(() => SafelyNavigateTo(componentType.FullName))">@componentType.Name</li>
+                            <li onclick="@(() => ComponentSelectedHandler(componentType.FullName))">@componentType.Name</li>
                         }
                     </ul>
                 </li>

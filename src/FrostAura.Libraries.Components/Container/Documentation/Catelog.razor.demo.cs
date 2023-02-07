@@ -1,5 +1,5 @@
 ﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 
 namespace FrostAura.Libraries.Components.Container.Documentation
 {
@@ -11,13 +11,26 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// <summary>
         /// Lifecycle event.
         /// </summary>
-        protected override Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
             base.OnInitialized();
 
-            if (!EnableDemoMode) return Task.CompletedTask;
+            if (!EnableDemoMode) return;
 
-            return Task.CompletedTask;
+            ComponentsAssembly = typeof(FrostAura
+                .Libraries
+                .Components
+                .Demo
+                .Presentational
+                .Demo
+                .Echo).Assembly;
+            // Wire up some hacky internal routing.
+            OnComponentSelected = (componentName) =>
+            {
+                FocusedComponentName = componentName;
+                OnParametersSet();
+                StateHasChanged();
+            };
         }
     }
 }

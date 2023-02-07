@@ -1,4 +1,4 @@
-﻿using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Shared.Enums.Input;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components;

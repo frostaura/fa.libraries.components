@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
+    <PackageReference Include="FrostAura.Libraries.Data" Version="7.0.3" />
+    <PackageReference Include="FrostAura.Libraries.Core" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Presentational\" />
+    <None Remove="Presentational\Demo\" />
+    <None Remove="FrostAura.Libraries.Data" />
+    <None Remove="FrostAura.Libraries.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentational\" />
+    <Folder Include="Presentational\Demo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj" />
+  </ItemGroup>
+</Project>

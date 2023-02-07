@@ -1,5 +1,5 @@
 ﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Shared.Models.Content;
 
 namespace FrostAura.Libraries.Components.Presentational.Content

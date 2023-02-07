@@ -1,5 +1,5 @@
 ﻿using System;
-using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Presentational.Input;
 using FrostAura.Libraries.Components.Shared.Enums.Input;
 using FrostAura.Libraries.Components.Shared.Models.Input;

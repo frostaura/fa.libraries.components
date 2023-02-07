@@ -18,5 +18,4 @@
   <ItemGroup>
     <ProjectReference Include="..\FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj" />
   </ItemGroup>
-
 </Project>

@@ -1,10 +1,9 @@
-﻿using FrostAura.Libraries.Components.Data.Interfaces;
-using FrostAura.Libraries.Components.Shared.Models.Configuration;
+﻿using FrostAura.Libraries.Components.Shared.Models.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using Microsoft.JSInterop;
 
-namespace FrostAura.Libraries.Components.Abstractions
+namespace FrostAura.Libraries.Components.Shared.Abstractions
 {
     /// <summary>
     /// FrostAura base component for core and shared functionality.
@@ -25,11 +24,6 @@ namespace FrostAura.Libraries.Components.Abstractions
         /// </summary>
         [Parameter]
         public bool EnableDemoMode { get; set; }
-        /// <summary>
-        /// Service to manipulate and fetch content from the the client-space. Including fetching configuration.
-        /// </summary>
-        [Inject]
-        protected IClientDataAccess ClientDataAccess { get; set; }
         /// <summary>
         /// Navigation manager.
         /// </summary>

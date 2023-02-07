@@ -1,4 +1,4 @@
-﻿using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Shared.Models.Content;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;

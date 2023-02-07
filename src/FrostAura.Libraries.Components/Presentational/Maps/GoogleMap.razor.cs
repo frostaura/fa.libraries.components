@@ -1,4 +1,5 @@
-﻿using FrostAura.Libraries.Components.Abstractions;
+﻿using FrostAura.Libraries.Components.Data.Interfaces;
+using FrostAura.Libraries.Components.Shared.Abstractions;
 using FrostAura.Libraries.Components.Shared.Enums.Map;
 using FrostAura.Libraries.Components.Shared.Models.Map;
 using Microsoft.AspNetCore.Components;
@@ -40,6 +41,11 @@ namespace FrostAura.Libraries.Components.Presentational.Maps
         /// </summary>
         [Parameter]
         public EventCallback<GoogleMap> OnMapReady { get; set; }
+        /// <summary>
+        /// Service to manipulate and fetch content from the the client-space. Including fetching configuration.
+        /// </summary>
+        [Inject]
+        protected IClientDataAccess ClientDataAccess { get; set; }
 
         /// <summary>
         /// Add a marker to the map.

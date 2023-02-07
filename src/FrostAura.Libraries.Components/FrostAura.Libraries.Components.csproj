@@ -61,5 +61,6 @@
     <ProjectReference Include="..\FrostAura.Libraries.Components.Engines\FrostAura.Libraries.Components.Engines.csproj" />
     <ProjectReference Include="..\FrostAura.Libraries.Components.Managers\FrostAura.Libraries.Components.Managers.csproj" />
     <ProjectReference Include="..\FrostAura.Libraries.Components.Shared\FrostAura.Libraries.Components.Shared.csproj" />
+    <ProjectReference Include="..\FrostAura.Libraries.Components.Demo\FrostAura.Libraries.Components.Demo.csproj" />
   </ItemGroup>
 </Project>
