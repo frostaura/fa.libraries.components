@@ -8,7 +8,7 @@ using System.Reflection;
 namespace FrostAura.Libraries.Components.Container.Documentation
 {
     /// <summary>
-    /// Toggle between two templates as async work gets done.
+    /// A component to render automated documentation for an assembly of components inheriting from BaseComponent<T>.
     /// </summary>
     public partial class Catelog : BaseComponent<Catelog>
     {
@@ -35,10 +35,6 @@ namespace FrostAura.Libraries.Components.Container.Documentation
         /// Supported component types.
         /// </summary>
         private List<IGrouping<string, Type>> _componentTypeGroups = new List<IGrouping<string, Type>>();
-        /// <summary>
-        /// Component fragment to render.
-        /// </summary>
-        private RenderFragment ComponentFragment { get; set; }
 
         /// <summary>
         /// Lifecycle event.
@@ -48,31 +44,6 @@ namespace FrostAura.Libraries.Components.Container.Documentation
             base.OnParametersSet();
 
             _componentTypeGroups = GetComponentTypes();
-
-            if (string.IsNullOrWhiteSpace(FocusedComponentName)) return;
-
-            var componentType = ComponentsAssembly
-                .GetTypes()
-                .SingleOrDefault(t => t.FullName == FocusedComponentName);
-
-            if (componentType == default) return;
-            if (componentType.IsGenericType)
-            {
-                // Check if the component type has an attribute DemoType and if so check the type instead of using object.
-                var demoTypeAttr = componentType.GetCustomAttribute<DemoTypeAttribute>();
-
-                if (demoTypeAttr == default) componentType = componentType.MakeGenericType(typeof(object));
-                else componentType = componentType.MakeGenericType(demoTypeAttr.Type);
-            }
-
-            ComponentFragment = builder =>
-            {
-                var i = 0;
-
-                builder.OpenComponent(i++, componentType);
-                builder.AddAttribute(i++, nameof(BaseComponent<object>.EnableDemoMode), true);
-                builder.CloseComponent();
-            };
         }
 
         /// <summary>
@@ -91,6 +62,7 @@ namespace FrostAura.Libraries.Components.Container.Documentation
                 .Where(p => p.GetCustomAttribute<NoDemoAttribute>() == default)
                 .OrderBy(t => t.Name)
                 .GroupBy(t => t.GetCategoryCategory())
+                .OrderBy(g => g.Key)
                 .ToList();
 
             return components;

@@ -12,6 +12,7 @@
     <EmbeddedResource Remove="Root\**" />
     <None Remove="Root\**" />
     <None Remove="Presentational\Input\DynamicField.razor.css" />
+    <None Remove="Container\Documentation\CatelogItem.razor.css" />
   </ItemGroup>
 
 
@@ -52,6 +53,7 @@
     <EmbeddedResource Include="Presentational\Maps\GoogleMap.razor.js" />
     <EmbeddedResource Include="Presentational\Status\CountdownBar.razor.css" />
     <EmbeddedResource Include="Presentational\Input\DynamicField.razor.css" />
+    <EmbeddedResource Include="Container\Documentation\CatelogItem.razor.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

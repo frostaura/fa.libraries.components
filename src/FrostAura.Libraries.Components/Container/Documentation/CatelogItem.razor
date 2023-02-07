@@ -1,0 +1,23 @@
+﻿@using FrostAura.Libraries.Components.Shared.Abstractions
+@using FrostAura.Libraries.Components.Presentational.Content
+@using FrostAura.Libraries.Components.Shared.Extensions;
+@inherits BaseComponent<CatelogItem>
+
+<InjectEmbeddedContent HtmlWrapper="style" ContentName="CatelogItem.razor.css" />
+<fa-documentation-catelog-item id="@Id">
+    <h2>@ComponentName.Split('.').Last()</h2>
+    <label>v @GetComponentVersion()</label>
+    <hr />
+    <label>Description</label>
+    <div>@GetDescription()</div>
+    <label>Full Name</label>
+    <div>@ComponentName</div>
+    <label>Example</label>
+    <div>@ComponentFragment</div>
+    <h3>Parameters</h3>
+    <hr />
+    Parameters...
+    <h3>Styles</h3>
+    <hr />
+    Styles used and their descriptions...
+</fa-documentation-catelog-item>

@@ -1,4 +1,5 @@
-﻿using FrostAura.Libraries.Components.Shared.Models.Configuration;
+﻿using FrostAura.Libraries.Components.Shared.Interfaces.Versioning;
+using FrostAura.Libraries.Components.Shared.Models.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using Microsoft.JSInterop;
@@ -8,7 +9,7 @@ namespace FrostAura.Libraries.Components.Shared.Abstractions
     /// <summary>
     /// FrostAura base component for core and shared functionality.
     /// </summary>
-    public abstract class BaseComponent<TComponentType> : ComponentBase
+    public abstract class BaseComponent<TComponentType> : ComponentBase, IRequiresVersioning
     {
         /// <summary>
         /// Unique component instance identifier.

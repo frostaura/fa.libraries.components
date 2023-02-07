@@ -16,9 +16,13 @@
   <ItemGroup>
     <None Remove="Attributes\" />
     <None Remove="Abstractions\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Interfaces\Versioning\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
     <Folder Include="Abstractions\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Versioning\" />
   </ItemGroup>
 </Project>

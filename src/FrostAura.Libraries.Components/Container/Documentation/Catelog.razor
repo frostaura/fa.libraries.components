@@ -11,6 +11,7 @@
             {
                 <li>
                     <div>@componentGroup.Key</div>
+                    <hr />
                     <ul class="components">
                         @foreach (var componentType in componentGroup)
                         {
@@ -23,16 +24,16 @@
     </aside>
 
     <article>
-        @if (ComponentFragment == default)
+        @if (string.IsNullOrWhiteSpace(FocusedComponentName))
         {
             <div>Select a component.</div>
         }
         else
         {
-            <label>Live Demo</label>
-            <div class="demo">
-                @ComponentFragment
-            </div>
+            <CatelogItem
+                ComponentName="@FocusedComponentName"
+                ComponentsAssembly="@ComponentsAssembly"
+                EnableDemoMode="@EnableDemoMode"></CatelogItem>
         }
     </article>
 </fa-documentation-catelog>
