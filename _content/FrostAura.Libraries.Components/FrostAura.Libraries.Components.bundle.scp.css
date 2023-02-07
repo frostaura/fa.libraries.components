@@ -1,0 +1,7 @@
+/* _content/FrostAura.Libraries.Components/Presentational/Maps/GoogleMap.razor.rz.scp.css */
+fa-maps-google-map[b-fxonhbphzm] {
+    display: block;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 250px;
+}
