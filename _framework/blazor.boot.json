@@ -7,10 +7,10 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "FrostAura.Libraries.Components.Client.dll": "sha256-ztKFZBRe89CSLSUtT+f17FFmPh29lW4MPJVcbCHIrLM=",
+      "FrostAura.Libraries.Components.Client.dll": "sha256-7kJhpQkOubhCLSoiDib9e7iv1TLwEknN6CHq0smwtMs=",
       "FrostAura.Libraries.Components.Data.dll": "sha256-6O6Y8KcpPgPqs38Hfz8\/3LvJs8j3gsgl6dx5Rkzcraw=",
       "FrostAura.Libraries.Components.Demo.dll": "sha256-t\/bROdgMX8Vg75knUIq8L84qZOH+2vlg6x7ROJrkC30=",
-      "FrostAura.Libraries.Components.dll": "sha256-zKUsd74mZh+Ju4ZnwfqbOOpz2gJdiO1vYdfGpXyD00I=",
+      "FrostAura.Libraries.Components.dll": "sha256-VnSrPG4KIx15WiEwxUbe\/8hhflh5DfgBQwqYDCA8oh4=",
       "FrostAura.Libraries.Components.Engines.dll": "sha256-xswAfXK6Vi45SaD3ob7Fsl6gdMKo1K41snACcWURcTE=",
       "FrostAura.Libraries.Components.Managers.dll": "sha256-eien7rUnlH8Uq9oG3m4arKOWDcqfOO49rj+6C3cY5F8=",
       "FrostAura.Libraries.Components.Shared.dll": "sha256-rXo15R4gv798GrPks0hkcU6SA8yrIP+MZ4ktO75LHFo=",
