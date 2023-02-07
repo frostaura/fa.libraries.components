@@ -13,4 +13,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Attributes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+  </ItemGroup>
 </Project>

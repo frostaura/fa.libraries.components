@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Reflection;
 using FrostAura.Libraries.Components.Data.Interfaces;
+using FrostAura.Libraries.Components.Shared.Attributes;
 
 namespace FrostAura.Libraries.Components.Presentational.Content
 {
     /// <summary>
     /// Component to inject content from an embedded file, into a Blazore component as HTML.
     /// </summary>
+    [NoDemo]
     public partial class InjectEmbeddedContent : BaseComponent<InjectEmbeddedContent>
     {
         /// <summary>

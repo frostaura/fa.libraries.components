@@ -13,12 +13,15 @@ using Microsoft.AspNetCore.Components.CompilerServices;
 using Microsoft.Extensions.Logging;
 using FrostAura.Libraries.Data.Attributes;
 using FrostAura.Libraries.Components.Shared.Models.Configuration;
+using FrostAura.Libraries.Components.Shared.Attributes;
+using FrostAura.Libraries.Core.Extensions.Validation;
 
 namespace FrostAura.Libraries.Components.Presentational.Input
 {
     /// <summary>
     /// Dynamic field to render a form element for given property infomation.
     /// </summary>
+    [NoDemo]
     public partial class DynamicField : BaseComponent<DynamicField>
     {
         /// <summary>

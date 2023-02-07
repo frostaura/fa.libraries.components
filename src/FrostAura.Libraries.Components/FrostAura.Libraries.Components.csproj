@@ -48,8 +48,8 @@
     <EmbeddedResource Include="Container\Documentation\Catelog.razor.css" />
     <EmbeddedResource Include="Presentational\Content\Carousel.razor.css" />
     <EmbeddedResource Include="Presentational\Input\DynamicForm.razor.css" />
-    <EmbeddedResource Include="Presentational\Map\GoogleMap.razor.css" />
-    <EmbeddedResource Include="Presentational\Map\GoogleMap.razor.js" />
+    <EmbeddedResource Include="Presentational\Maps\GoogleMap.razor.css" />
+    <EmbeddedResource Include="Presentational\Maps\GoogleMap.razor.js" />
     <EmbeddedResource Include="Presentational\Status\CountdownBar.razor.css" />
     <EmbeddedResource Include="Presentational\Input\DynamicField.razor.css" />
   </ItemGroup>

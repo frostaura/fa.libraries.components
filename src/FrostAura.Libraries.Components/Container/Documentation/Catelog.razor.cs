@@ -1,5 +1,7 @@
 ﻿using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Attributes;
 using FrostAura.Libraries.Components.Shared.Extensions;
+using FrostAura.Libraries.Data.Attributes;
 using Microsoft.AspNetCore.Components;
 using System.Reflection;
 
@@ -59,7 +61,11 @@ namespace FrostAura.Libraries.Components.Container.Documentation
             if (componentType == default) return;
             if (componentType.IsGenericType)
             {
-                componentType = componentType.MakeGenericType(typeof(object));
+                // Check if the component type has an attribute DemoType and if so check the type instead of using object.
+                var demoTypeAttr = componentType.GetCustomAttribute<DemoTypeAttribute>();
+
+                if (demoTypeAttr == default) componentType = componentType.MakeGenericType(typeof(object));
+                else componentType = componentType.MakeGenericType(demoTypeAttr.Type);
             }
 
             ComponentFragment = builder =>
@@ -83,6 +89,7 @@ namespace FrostAura.Libraries.Components.Container.Documentation
                 .Where(t => !t.IsAbstract && !t.IsInterface)
                 .Where(t => t.BaseType.IsGenericType)
                 .Where(t => t.BaseType.GetGenericTypeDefinition() == typeof(BaseComponent<object>).GetGenericTypeDefinition())
+                .Where(p => p.GetCustomAttribute<NoDemoAttribute>() == default)
                 .OrderBy(t => t.Name)
                 .GroupBy(t => t.GetCategoryCategory())
                 .ToList();

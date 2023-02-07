@@ -1,5 +1,9 @@
 ﻿fa-documentation-catelog {
-    display: block;
+    display: flex;
     width: 100%;
     height: 100%;
 }
+
+    fa-documentation-catelog > article {
+        flex: 1;
+    }

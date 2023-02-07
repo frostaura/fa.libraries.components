@@ -90,6 +90,13 @@ namespace FrostAura.Libraries.Components.Presentational.Maps
         /// </summary>
         private async Task InitializeMapAsync()
         {
+            if(string.IsNullOrWhiteSpace(ApiKey))
+            {
+                var config = await ClientDataAccess.GetClientConfigurationAsync(CancellationToken.None);
+
+                ApiKey = config.MapsApiKey;
+            }
+
             await JsRuntime.InvokeVoidAsync("faGoogleMap.initializeGoogleMapAsync", new
             {
                 id = Id,

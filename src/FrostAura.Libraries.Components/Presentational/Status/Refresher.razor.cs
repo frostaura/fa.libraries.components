@@ -1,4 +1,5 @@
 ﻿using FrostAura.Libraries.Components.Abstractions;
+using FrostAura.Libraries.Components.Shared.Attributes;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
@@ -7,6 +8,7 @@ namespace FrostAura.Libraries.Components.Presentational.Status
     /// <summary>
     /// Component for allowing automatic client-initiated refreshes.
     /// </summary>
+    [NoDemo]
     public partial class Refresher : BaseComponent<Refresher>, IAsyncDisposable
     {
         /// <summary>

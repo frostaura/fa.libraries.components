@@ -25,7 +25,7 @@
             }
 
             if (!apiKey) {
-                reject('No api key was specified for component fa-google-map.');
+                reject('No api key was specified for component fa-maps-google-map.');
 
                 return;
             }
