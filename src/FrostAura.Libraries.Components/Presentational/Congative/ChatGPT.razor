@@ -1,0 +1,27 @@
+﻿@using FrostAura.Libraries.Components.Shared.Abstractions
+@using FrostAura.Libraries.Components.Shared.Models.Cognative;
+@inherits BaseComponent<ChatGPT>
+
+<InjectEmbeddedContent ContentName="ChatGPT.razor.css" HtmlWrapper="style" />
+<fa-chatgpt id="@Id">
+    <ul>
+        @foreach (var message in _messages)
+        {
+            <li>
+                <strong>@message.Key:</strong>
+                @message.Value
+            </li>
+        }
+
+        @if (_assistantIsTyping)
+        {
+            <li><i><strong>Assistant:</strong> is typing...</i></li>
+        }
+
+        <DynamicForm
+            TDataContextType="PromptModel"
+            SubmitButtonText="Ask"
+            DataContext="_prompt"
+            OnValidSubmit="OnAskAsync"></DynamicForm>
+    </ul>
+</fa-chatgpt>

@@ -2,5 +2,6 @@
   "IdentityServerUrl": "https://id.frostaura.net",
   "AppIdentity": "fa.libraries.components.client",
   "AppName": "FrostAura Components Library",
-  "MapsApiKey": "AIzaSyB4UA2uljB5KUDLgg41Uc8rKJGW3U5Gtlw"
+  "MapsApiKey": "AIzaSyB4UA2uljB5KUDLgg41Uc8rKJGW3U5Gtlw",
+  "OpenAiApiKey": "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"
 }

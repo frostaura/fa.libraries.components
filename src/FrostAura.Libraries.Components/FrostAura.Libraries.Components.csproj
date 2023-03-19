@@ -13,6 +13,8 @@
     <None Remove="Root\**" />
     <None Remove="Presentational\Input\DynamicField.razor.css" />
     <None Remove="Container\Documentation\CatelogItem.razor.css" />
+    <None Remove="Presentational\Congative\" />
+    <None Remove="Presentational\Congative\ChatGPT.razor.css" />
   </ItemGroup>
 
 
@@ -23,11 +25,13 @@
   <ItemGroup>
     <PackageReference Include="FrostAura.Libraries.Data" Version="7.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-rc1.20223.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.4" />
     <PackageReference Include="FrostAura.Libraries.Core" Version="7.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
-    <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
+    <PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
+    <PackageReference Include="OpenAI" Version="1.6.0" />
+    <PackageReference Include="Markdig" Version="0.31.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,9 +58,11 @@
     <EmbeddedResource Include="Presentational\Status\CountdownBar.razor.css" />
     <EmbeddedResource Include="Presentational\Input\DynamicField.razor.css" />
     <EmbeddedResource Include="Container\Documentation\CatelogItem.razor.css" />
+    <EmbeddedResource Include="Presentational\Congative\ChatGPT.razor.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Presentational\Congative\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FrostAura.Libraries.Components.Data\FrostAura.Libraries.Components.Data.csproj" />

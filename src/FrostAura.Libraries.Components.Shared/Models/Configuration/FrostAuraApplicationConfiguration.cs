@@ -34,5 +34,9 @@ namespace FrostAura.Libraries.Components.Shared.Models.Configuration
         /// Platform-specific maps API key.
         /// </summary>
         public string MapsApiKey { get; set; }
+        /// <summary>
+        /// OpenAI API key.
+        /// </summary>
+        public string OpenAiApiKey { get; set; }
     }
 }
