@@ -110,6 +110,16 @@ namespace FrostAura.Libraries.Components.Container.Documentation
             var componentType = ComponentsAssembly
                 .GetTypes()
                 .SingleOrDefault(t => t.FullName == ComponentName);
+
+            if (componentType.IsGenericType)
+            {
+                // Check if the component type has an attribute DemoType and if so check the type instead of using object.
+                var demoTypeAttr = componentType.GetCustomAttribute<DemoTypeAttribute>();
+
+                if (demoTypeAttr == default) componentType = componentType.MakeGenericType(typeof(object));
+                else componentType = componentType.MakeGenericType(demoTypeAttr.Type);
+            }
+
             var componentInstance = Activator.CreateInstance(componentType);
             var castedInstance = (IRequiresVersioning)componentInstance;
 
