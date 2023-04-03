@@ -55,6 +55,11 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         [Parameter]
         public bool ShouldRenderValidator { get; set; }
         /// <summary>
+        /// Collection of types that support being rendered by the dynamic field system together with which component to render for the type.
+        /// </summary>
+        [Parameter]
+        public Dictionary<Type, Type> TypeToControlRendererMappings { get; set; }
+        /// <summary>
         /// Getter for the field's description.
         /// </summary>
         private string _fieldLabel
@@ -74,10 +79,6 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         /// A unique field id for this particular fully qualified property name.
         /// </summary>
         private string _fieldId => $"{Model.GetType()}-{PropertyInformation.Name}";
-        /// <summary>
-        /// Collection of types that support being rendered by the dynamic field system together with which component to render for the type.
-        /// </summary>
-        private static readonly Dictionary<Type, Type> _typeToControlRendererMappings = new Dictionary<Type, Type>();
 
         /// <summary>
         /// Register default control type renderers for property types encountered.
@@ -86,24 +87,7 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         {
             Model = Model ?? CascadedEditContext.Model;
 
-            // Register default form control mappings.
-            RegisterRendererTypeControl<string, InputText>();
-            RegisterRendererTypeControl<int, InputNumber<int>>();
-            RegisterRendererTypeControl<double, InputNumber<double>>();
-            RegisterRendererTypeControl<DateTime, InputDate<DateTime>>();
-            RegisterRendererTypeControl<bool, InputCheckbox>();
-
             base.OnInitialized();
-        }
-
-        /// <summary>
-        /// Register a new control to be rendered when a given field type is encountered. The control type has to be derived from InputBase<typeparamref name="TFieldType"/>.
-        /// </summary>
-        /// <typeparam name="TFieldType">Fielt type to map the control for.</typeparam>
-        /// <typeparam name="TControlToRenderType">Control type to render for the field.</typeparam>
-        public static void RegisterRendererTypeControl<TFieldType, TControlToRenderType>() where TControlToRenderType : InputBase<TFieldType>
-        {
-            _typeToControlRendererMappings[typeof(TFieldType)] = typeof(TControlToRenderType);
         }
 
         /// <summary>
@@ -343,6 +327,7 @@ namespace FrostAura.Libraries.Components.Presentational.Input
                 builder.AddAttribute(sequence++, nameof(PropertyInformation), property);
                 builder.AddAttribute(sequence++, nameof(Model), nestedModel);
                 builder.AddAttribute(sequence++, nameof(PropertyEffects), PropertyEffects);
+                builder.AddAttribute(sequence++, nameof(TypeToControlRendererMappings), TypeToControlRendererMappings);
                 builder.CloseComponent();
             }
         }
@@ -354,14 +339,14 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         /// <returns>Object type to render.</returns>
         private Type GetComponentTypeToRenderForValueType<TValue>()
         {
-            if (!_typeToControlRendererMappings.ContainsKey(typeof(TValue)))
+            if (!TypeToControlRendererMappings.ContainsKey(typeof(TValue)))
             {
                 Logger.LogWarning($"The type '{typeof(TValue).FullName}' is not supported by DynamicField. Call FrostAura.Standard.Components.Razor.Input.DynamicField.RegisterRendererTypeControl in order to map a renderer.");
 
                 return default;
             }
 
-            return _typeToControlRendererMappings[typeof(TValue)];
+            return TypeToControlRendererMappings[typeof(TValue)];
         }
     }
 }

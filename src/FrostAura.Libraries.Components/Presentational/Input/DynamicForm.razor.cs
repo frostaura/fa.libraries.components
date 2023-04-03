@@ -45,6 +45,18 @@ namespace FrostAura.Libraries.Components.Presentational.Input
         [Parameter]
         public List<FormPropertyEffect> PropertyEffects { get; set; } = new List<FormPropertyEffect>();
         /// <summary>
+        /// Collection of types that support being rendered by the dynamic field system together with which component to render for the type.
+        /// </summary>
+        [Parameter]
+        public Dictionary<Type, Type> TypeToControlRendererMappings { get; set; } = new Dictionary<Type, Type>
+        {
+            { typeof(string), typeof(InputText) },
+            { typeof(int), typeof(InputNumber<int>) },
+            { typeof(double), typeof(InputNumber<double>) },
+            { typeof(DateTime), typeof(InputDate<DateTime>) },
+            { typeof(bool), typeof(InputCheckbox) }
+        };
+        /// <summary>
         /// Get data context property information.
         /// </summary>
         private IEnumerable<PropertyInfo> _dataContextProperties => DataContext?
