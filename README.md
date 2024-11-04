@@ -1,12 +1,12 @@
 # fa.libraries.components
 ## Description
 This is a collection of all FrostAura Razor components, used in Blazor Server and WASM applications as well as MAUI.
-See the live components demo space [here on GitHub Pages](https://fagh.github.io/fa.libraries.components/).
+See the live components demo space [here on GitHub Pages](https://frostaura.github.io/fa.libraries.components/).
 ## Status
 | Project | Status | Platform
 | --- | --- | --- |
-| FrostAura.Libraries.Components | [![NuGet Workflow](https://github.com/faGH/fa.standard.components/actions/workflows/nuget_workflow.yml/badge.svg)](https://github.com/faGH/fa.standard.components/actions/workflows/nuget_workflow.yml) | GitHub Actions
-| [FrostAura Components GitHub Pages](https://fagh.github.io/fa.libraries.components/) | [![GitHub Pages Workflow](https://github.com/faGH/fa.standard.components/actions/workflows/pages.yml/badge.svg)](https://github.com/faGH/fa.standard.components/actions/workflows/pages.yml) | GitHub Actions
+| FrostAura.Libraries.Components | [![NuGet Workflow](https://github.com/frostaura/fa.standard.components/actions/workflows/nuget_workflow.yml/badge.svg)](https://github.com/frostaura/fa.standard.components/actions/workflows/nuget_workflow.yml) | GitHub Actions
+| [FrostAura Components GitHub Pages](https://frostaura.github.io/fa.libraries.components/) | [![GitHub Pages Workflow](https://github.com/frostaura/fa.standard.components/actions/workflows/pages.yml/badge.svg)](https://github.com/frostaura/fa.standard.components/actions/workflows/pages.yml) | GitHub Actions
 
 ## NuGet Packages
 | Project | Nuget |

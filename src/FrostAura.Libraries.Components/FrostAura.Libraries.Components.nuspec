@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>FrostAura.Libraries.Components</id>
-    <version>7.0.9</version>
+    <version>7.0.10</version>
     <title>FrostAura.Libraries.Components</title>
     <authors>Dean Martin</authors>
     <owners>FrostAura</owners>
     <iconUrl>https://avatars1.githubusercontent.com/u/8956241</iconUrl>
-    <projectUrl>https://github.com/faGH/fa.libraries.components</projectUrl>
+    <projectUrl>https://github.com/frostaura/fa.libraries.components</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>FrostAura component suite for Blazor applications.</description>
     <summary />
