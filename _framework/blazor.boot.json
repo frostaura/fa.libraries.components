@@ -1,7 +1,7 @@
 {
   "entryAssembly": "FrostAura.Libraries.Components.Client",
   "resources": {
-    "hash": "sha256-ssDa8LVsvyKd7BDXLFaAUANa9BgmRakM1nN5Ph9NTNo=",
+    "hash": "sha256-K0ot2e/7JfzCG/CaxpayEFUAO10nM734jkjEEmX9JkA=",
     "runtime": {
       "dotnet.7.0.20.dwptlzpfyy.js": "sha256-eaJTmow4t8eE7FZMZR5Ja41JMOefGCbIYDTdpclGsac=",
       "dotnet.timezones.blat": "sha256-gbATD5HDsHYtW8vdPYh9iSBY4O5CjvMeCSF5xXWF1xo=",
@@ -11,13 +11,13 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "FrostAura.Libraries.Components.Client.dll": "sha256-/BW5hXu8BOxwX5ObhBl0JWUcHm/T5xKkIkRLih8QkkY=",
-      "FrostAura.Libraries.Components.Data.dll": "sha256-ReCUGocouBOpD1G+Jx7Gt0RHpZcgmU5cO/+0K1sV9TI=",
-      "FrostAura.Libraries.Components.Demo.dll": "sha256-RbHQ3De2ie0KoNV1kcf+cGCoJwW1TxwGpveSYkCLFcE=",
-      "FrostAura.Libraries.Components.dll": "sha256-LDeoFJV8uFFLwR39tbaPyMnsbwNLQ+F/TbETvNLMDGA=",
-      "FrostAura.Libraries.Components.Engines.dll": "sha256-OqrwuP5sKL3NZSJAhylX8R2qspm0Wky9uMVg+2Zot8s=",
-      "FrostAura.Libraries.Components.Managers.dll": "sha256-1cU/IXzRjwAI+neHSXIgfCjfnxPn77NuhjA5VZI5yY8=",
-      "FrostAura.Libraries.Components.Shared.dll": "sha256-UePoKyh5wOz0ZDXa5T0XtjoWcaGFo71ovsxJTp96Dq8=",
+      "FrostAura.Libraries.Components.Client.dll": "sha256-KExl5+hcYjzYlL+1y2jTqufDpXnpJKI3PaczD1a/BvQ=",
+      "FrostAura.Libraries.Components.Data.dll": "sha256-vBrkYg/FVQA+t2zNTpYolncXpBt8UF2+mpBFtBLFWCM=",
+      "FrostAura.Libraries.Components.Demo.dll": "sha256-K0MBVCcy57PidpSYn35RvuHDFWi6a+8fwH9tu3RsNSM=",
+      "FrostAura.Libraries.Components.dll": "sha256-SjPemRWEHLxY1S8f4sHtPOyV2+CHfzX5EZ0xuYNd8Ns=",
+      "FrostAura.Libraries.Components.Engines.dll": "sha256-iY6dBVDAIum4cqYzUVOwC9tivLlX895XpdL/jbdAuRQ=",
+      "FrostAura.Libraries.Components.Managers.dll": "sha256-oEZgRw7CVfX6R49o2lhexQtOPyzT09bQHq/4MA+Yt44=",
+      "FrostAura.Libraries.Components.Shared.dll": "sha256-mAfhjpxqu+dn1T9BQKwCDczHXHoKByP330x+0O/4GWU=",
       "FrostAura.Libraries.Core.dll": "sha256-p0iLVL3w6V+dkrTJkk8l9aXBuQHriU3roAzvCSszBjw=",
       "FrostAura.Libraries.Data.dll": "sha256-1HwKuovByRUMHH7/HzT+BOIx+spNfIscmmfZuzeJJ/Q=",
       "Markdig.dll": "sha256-iKKz5I0C1crIJpaE817LsfaIGinS7O1szh3CsTyQ8Bc=",
